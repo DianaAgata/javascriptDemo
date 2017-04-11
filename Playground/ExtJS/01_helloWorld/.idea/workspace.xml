@@ -15,11 +15,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="initialize.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/initialize.html">
+      <file leaf-file-name="helloWorldWithHandlers01.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/02_EventHandlers/helloWorldWithHandlers01.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+            <state relative-caret-position="442">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helloWorldWithHandlers02.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/02_EventHandlers/helloWorldWithHandlers02.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -31,6 +41,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/initialize.html" />
+        <option value="$PROJECT_DIR$/helloWorld02.html" />
+        <option value="$PROJECT_DIR$/helloWorld03.html" />
+        <option value="$PROJECT_DIR$/02_EventHandlers/helloWorld01.html" />
+        <option value="$PROJECT_DIR$/02_EventHandlers/helloWorldWithHandlers02.html" />
       </list>
     </option>
   </component>
@@ -63,13 +77,46 @@
     <panes>
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="01_helloWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="01_helloWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="01_helloWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="01_helloWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="02_EventHandlers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\01_helloWorld\02_EventHandlers" />
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\01_helloWorld" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -155,12 +202,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491914483326</updated>
-      <workItem from="1491914484483" duration="311000" />
+      <workItem from="1491914484483" duration="1760000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311000" />
+    <option name="totallyTimeSpent" value="1760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="499" y="56" width="1336" height="897" extended-state="0" />
@@ -203,10 +250,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/initialize.html">
+    <entry file="file://$PROJECT_DIR$/helloWorld01.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloWorld02.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloWorld03.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02_EventHandlers/helloWorldWithHandlers01.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02_EventHandlers/helloWorldWithHandlers02.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding />
         </state>
       </provider>
