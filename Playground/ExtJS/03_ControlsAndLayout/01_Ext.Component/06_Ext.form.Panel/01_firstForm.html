@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+           Ext.create("Ext.form.Panel",{
+               title: "Controls",
+               url: "someUrl",
+               renderTo: Ext.getBody(),
+               items: [
+
+                   {
+                       xtype: "radiogroup",
+                       fieldLabel: "Title",
+                       vertical: true,
+                       columns:1,
+                       items: [
+                           {
+                               boxLabel: "Mr",
+                               name: "title"
+                           },
+                           {
+                               boxLabel: "Ms",
+                               name: "title"
+                           }
+                       ]
+                   },
+
+                   {
+                     xtype: "textfield",
+                       fieldLabel: "Name",
+                       allowBlank: false,
+                       maxLength: 50,
+                       msgTarget: "side",
+                       name: "name"
+                   },
+
+                   {
+                       xtype: "datefield",
+                       fieldLabel: "Date of birth",
+                       msgTarget: "side",
+                       name: "dob"
+                   },
+
+                   {
+                     xtype: "textfield",
+                       fieldLabel: "Blog",
+                       vtype: "url",
+                       msgTarget: "side",
+                       name: "blog"
+                   },
+
+                   {
+                       xtype: "numberfield",
+                       fieldLabel: "Years of experience",
+                       minValue: 5,
+                       maxValue: 15,
+                       msgTarget: "side",
+                       name: "xp"
+                   },
+
+                   {
+                       xtype: "textarea",
+                       fieldLabel: "Address",
+                       validator: function(val){
+                           if(val.indexOf('#') !== -1 || val.indexOf(".") !== -1){
+                               return "Invalid characters like # or . in address";
+                           }
+                           return true;
+                       },
+                       msgTarget: "side",
+                       name: "address"
+                   },
+
+                   {
+                       xtype: "button",
+                       text: "Submit",
+                       listeners: {
+                           "click" : function(src){
+                               src.up("form").submit({
+                                   success: function(form,action){
+                                       alert("Successfully submitted");
+                                   },
+                                   failure: function(form,action){
+                                       console.log(action.failureType);
+                                       console.log(action.result);
+                                       alert(action.response.status + ", " + action.response.statusText);
+                                   }
+                               });
+                           }
+                       }
+                   }
+
+               ]
+           });
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>

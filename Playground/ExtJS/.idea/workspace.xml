@@ -21,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="01_firstMenu.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/04_Ext.menu.Menu/01_firstMenu.html">
+      <file leaf-file-name="01_firstToolbar.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/07_Ext.toolbar.Toolbar/01_firstToolbar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="323">
+              <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -71,6 +71,8 @@
         <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/01_Ext.container.Container/05_events.html" />
         <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/03_Ext.window.Window/01_firstMenu.html" />
         <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/04_Ext.menu.Menu/01_firstMenu.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/05_Ext.tab.Panel/01_firstPanel.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/06_Ext.form.Panel/01_firstForm.html" />
       </list>
     </option>
   </component>
@@ -138,51 +140,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="04_Ext.menu.Menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExtJS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExtJS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="03_ControlsAndLayout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="01_Ext.Component" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="03_Ext.window.Window" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExtJS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExtJS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="03_ControlsAndLayout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="01_Ext.Component" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="01_Ext.container.Container" />
+              <option name="myItemId" value="05_Ext.tab.Panel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -281,12 +239,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\07_Ext.toolbar.Toolbar" />
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\06_Ext.form.Panel" />
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\05_Ext.tab.Panel" />
       <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\04_Ext.menu.Menu" />
       <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\03_Ext.window.Window" />
-      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\01_Ext.container.Container" />
-      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component" />
-      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\02-basicOOP\08_Ext.Class" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -382,12 +343,12 @@
       <workItem from="1491916668559" duration="7246000" />
       <workItem from="1491977866502" duration="7059000" />
       <workItem from="1491985238602" duration="32000" />
-      <workItem from="1491985277671" duration="8028000" />
+      <workItem from="1491985277671" duration="11065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22365000" />
+    <option name="totallyTimeSpent" value="25402000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -748,8 +709,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/04_Ext.menu.Menu/01_firstMenu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="391">
+          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/05_Ext.tab.Panel/01_firstPanel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/06_Ext.form.Panel/01_firstForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="98" column="28" lean-forward="true" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/07_Ext.toolbar.Toolbar/01_firstToolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
           <folding />
         </state>
       </provider>
