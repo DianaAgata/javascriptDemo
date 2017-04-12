@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+           var container1 = Ext.create("Ext.container.Container",{
+               defaults: {
+                 width:400,
+                   height:50
+               },
+               renderTo: Ext.getBody()
+           });
+
+           var item1 = Ext.create("Ext.form.field.Text",{
+                    xtype: "textfield",
+                    fieldLabel:"Name"
+                });
+
+           var item2 = Ext.create("Ext.button.Button",{
+                    xtype: "button",
+                    text: "Submit",
+                    listeners:{
+                        click: function(){
+                            container1.remove(item3);
+                        }
+                    }
+                });
+
+
+            var item3 = Ext.create("Ext.Component",{
+                html: "raw component"
+            });
+
+
+
+           container1.add(item1);
+           container1.add(item2);
+           container1.add(item3);
+
+           console.log(container1.down("button")); //walks down the container and returns the button that is a descendent of the container
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+            var container = Ext.create("Ext.container.Container",{
+                html : "Default Container",
+                listeners: {
+                    beforeadd : function () {
+                        console.log("beforeadd");
+                    },
+                    add : function () {
+                        console.log("add");
+                    },
+                    beforeremove : function () {
+                        console.log("beforeremove");
+                    },
+                    remove : function () {
+                        console.log("remove");
+                    }
+
+                }
+            });
+
+            console.log("***Adding comp1");
+            container.add({
+                xtype: "component",
+                html: "Raw",
+                id: "comp1"
+            });
+            debugger;
+            console.log("***Removing comp1");
+
+            container.remove("comp1");
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
