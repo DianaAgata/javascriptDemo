@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            Ext.create("Ext.panel.Panel",{
+                items :[
+                    Ext.create("Ext.Button",{
+                       renderTo: Ext.get("actions"),
+                        html: "Show component",
+                        itemId: "comp1",
+                        listeners :{
+                           click:  function(){
+                               comp3.show();
+                               console.log('clicked ');
+
+                           }
+                        }
+                    }),
+
+                    Ext.create("Ext.Button",{
+                        renderTo: Ext.get("actions"),
+                        html: "Hide Component",
+                        itemId: "comp2",
+                        listeners :{
+                            click:  function(){
+                                comp3.hide();
+                                console.log('clicked '); }
+                        }
+                    }),
+
+                    Ext.create("Ext.Button",{
+                        renderTo: Ext.get("actions"),
+                        html: "Enable Component",
+                        itemId: "comp4",
+                        listeners :{
+                            click:  function(){
+                                comp3.enable();
+                                console.log('clicked '); }
+                        }
+                    }),
+
+                    Ext.create("Ext.Button",{
+                        renderTo: Ext.get("actions"),
+                        html: "Disable Component",
+                        itemId: "comp5",
+                        listeners :{
+                            click:  function(){
+                                comp3.disable();
+                                console.log('clicked '); }
+                        }
+                    }),
+
+                    Ext.create("Ext.Button",{
+                        renderTo: Ext.get("actions"),
+                        html: "Destroy Component",
+                        itemId: "comp6",
+                        listeners :{
+                            click:  function(){
+                                comp3.destroy();
+                                console.log('clicked '); }
+                        }
+                    })
+
+
+                ]
+            });
+
+            var comp3 = Ext.create("Ext.Button",{
+                renderTo: Ext.get("content"),
+                html: "Raw Component",
+                itemId: "comp3",
+                Id:"comp3",
+                listeners :{
+                    click:  function(){ console.log('clicked '); }
+                }
+            })
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+<div id="actions" style="background-color: aqua; height:50px; width:550px;">
+</div>
+
+<div id="content" style="background-color: blanchedalmond; height:50px; width:250px;">
+</div>
+
+</body>
+</html>
