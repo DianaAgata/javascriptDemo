@@ -14,22 +14,39 @@
 
             Ext.create('Ext.tab.Panel',{
                 renderTo: Ext.getBody(),
-                title: "Documentation",
-                plain: false,
-                height: 200,
-                tabPosition: "bottom",
-                items:[
+                title: "Panel with a toolbar",
+                html: "This is an example to use a toolbar",
+                dockedItems: [
                     {
-                        title: 'Home',
-                        html: "Welcome to Ext JS 4"
-                    },
-                    {
-                        title: 'API',
-                        html: "API docs"
-                    },
-                    {
-                        title: 'Guides',
-                        html: "Standard guides"
+                        xtype: "toolbar",
+                        dock: "bottom",
+                        items:[
+                            {
+                                xtype: "tbtext",
+                                text: "Item: 19"
+                            },
+                            {
+                              xtype: "tbseparator"
+                            },
+                            {
+                                xtype: "tbtext",
+                                text: "English (United States)"
+                            },
+                            " ",
+                            {
+                                xtype: "combo",
+                                fieldLabel: "Go to",
+                                labelAlign: "right"
+                            },
+                            "⏵",
+                            {
+                                text: "Print"
+                            },
+                            " ",
+                            {
+                                text: "Outline"
+                            }
+                        ]
                     }
                 ]
             });

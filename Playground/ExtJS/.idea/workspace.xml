@@ -21,11 +21,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="01_firstToolbar.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/07_Ext.toolbar.Toolbar/01_firstToolbar.html">
+      <file leaf-file-name="07_tableLayout.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/07_tableLayout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            <state relative-caret-position="476">
+              <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="08_columnLayout.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/08_columnLayout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="09_borderLayout.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/09_borderLayout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -73,6 +93,16 @@
         <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/04_Ext.menu.Menu/01_firstMenu.html" />
         <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/05_Ext.tab.Panel/01_firstPanel.html" />
         <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/06_Ext.form.Panel/01_firstForm.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/07_Ext.toolbar.Toolbar/01_firstToolbar.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/08_Ext.container.Viewport/01_firstViewpoer.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/08_Ext.container.Viewport/02_fitLayout.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/08_Ext.container.Viewport/03_anchorLayout.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/04_vBoxLayout.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/06_hBoxLayout.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/06_acordionLayout.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/07_tableLayout.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/08_columnLayout.html" />
+        <option value="$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/09_borderLayout.html" />
       </list>
     </option>
   </component>
@@ -118,7 +148,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="01_Ext.Component" />
+              <option name="myItemId" value="02_Layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -133,14 +163,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="03_ControlsAndLayout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="01_Ext.Component" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="05_Ext.tab.Panel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -240,14 +262,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout" />
       <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\02_Layouts" />
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\08_Ext.container.Viewport" />
       <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\07_Ext.toolbar.Toolbar" />
       <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\06_Ext.form.Panel" />
       <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\05_Ext.tab.Panel" />
-      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\04_Ext.menu.Menu" />
-      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\03_Ext.window.Window" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -343,12 +366,12 @@
       <workItem from="1491916668559" duration="7246000" />
       <workItem from="1491977866502" duration="7059000" />
       <workItem from="1491985238602" duration="32000" />
-      <workItem from="1491985277671" duration="11065000" />
+      <workItem from="1491985277671" duration="16063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25402000" />
+    <option name="totallyTimeSpent" value="30400000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -733,8 +756,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/07_Ext.toolbar.Toolbar/01_firstToolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        <state relative-caret-position="510">
+          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/01_firstViewport.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/02_fitLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/03_anchorLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/04_vBoxLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/05_hBoxLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/06_accordionLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/07_tableLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/08_columnLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/02_Layouts/09_borderLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding />
         </state>
       </provider>

@@ -3,6 +3,7 @@
     <words>
       <w>radiogroup</w>
       <w>textfield</w>
+      <w>vbox</w>
       <w>xtype</w>
     </words>
   </dictionary>
