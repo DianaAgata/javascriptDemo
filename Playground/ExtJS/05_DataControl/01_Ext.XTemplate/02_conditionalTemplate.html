@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            var countryStore = Ext.create('Ext.data.Store', {
+                fields: ["name", "capital"],
+                data: [
+                    {name: 'India', capital: "New Delhi"},
+                    {name: 'USA', capital: "Washington"},
+                    {name: 'UK', capital: "London"}
+                ]
+            });
+
+            var tpl = Ext.create("Ext.XTemplate",
+                '<tpl for=".">',
+                    '<tpl if="data.name == \'USA\' ">',
+                        '<p style="text-decoration:underline"> {data.name}, <i>{data.capital}</i> </p><br/>',
+                    '<tpl else>',
+                        '<p>{data.name}, <i>{data.capital}</i></p><br/>',
+                    '</tpl>',
+                '</tpl>');
+
+            Ext.create("Ext.panel.Panel",{
+                title: "Countries",
+                html: tpl.apply(countryStore),
+                renderTo: Ext.getBody()
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>

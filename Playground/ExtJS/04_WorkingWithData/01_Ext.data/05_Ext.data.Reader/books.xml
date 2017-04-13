@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Books>
+    <Book>
+        <Title>First Book</Title>
+        <Author>Florin</Author>
+        <Price>44.99</Price>
+    </Book>
+    <Book>
+        <Title>Second Book</Title>
+        <Author>Lolos</Author>
+        <Price>14.55</Price>
+    </Book>
+    <Book>
+        <Title>Third Book</Title>
+        <Author>Envios</Author>
+        <Price>78.42</Price>
+    </Book>
+</Books>

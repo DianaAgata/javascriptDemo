@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            var bookStore = Ext.create('Ext.data.Store', {
+                fields: ["isbn","title","author"],
+                data: [
+                    {isbn:"1430219424", title:"First Book", author: "Florin"},
+                    {isbn:"1430219898", title:"Second Book", author: "Lorem"},
+                    {isbn:"1430349424", title:"Third Book", author: "Ipsum"}
+                ]
+            });
+
+            var booksCMB=Ext.create("Ext.form.field.ComboBox",{
+                xtype: "combobox",
+                queryMode: "local",
+                queryDelay: 5,
+                queryCaching: false,
+                displayField: "title",
+                valueField: "isbn",
+                renderTo: Ext.getBody()
+            });
+
+            booksCMB.bindStore(bookStore);
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
