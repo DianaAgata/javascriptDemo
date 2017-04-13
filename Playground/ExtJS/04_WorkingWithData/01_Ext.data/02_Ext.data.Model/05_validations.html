@@ -12,6 +12,11 @@
 
         Ext.onReady(function () {
 
+            Ext.data.validations.priceRange = function (config, value){
+                var max = config.max;
+                var min = config.min;
+                return value < max && value > min;
+            };
 
             Ext.define("Book",{
                 extend: "Ext.data.Model",
@@ -19,14 +24,16 @@
                     "title",
                     "author",
                     "ISBN",
-                    "price"
+                    "price",
+                    "priceRange"
                 ],
                 validations:[
                     {type:"presence",field:"title"},
                     {type:"length",field:"author",max:20,min:3},
                     {type:"format",field:"ISBN",
                     matcher:/^ISBN\s(?=[-0-9xX ]{13}$)(?:[0-9]+[- ]){3}[0-9]*[xX0-9]$/ },
-                    {type:"inclusion",field:"price",list:["$20","$25","$30","$35"]}
+                    {type:"inclusion",field:"price",list:["$20","$25","$30","$35"]},
+                    {type:"priceRange",field:"priceRange", max:50,min:5,message:"must be between 5 and 50"}
 
                 ],
                 idProperty: "title"
@@ -34,9 +41,10 @@
 
            var myBook = Ext.create("Book",{
                title:"My Own Book",
-                author:"Florin",
+                author:"X",
                 ISBN:"",
-               price:"$45"
+               price:"$45",
+               priceRange:2
             });
 
             var errors = myBook.validate();

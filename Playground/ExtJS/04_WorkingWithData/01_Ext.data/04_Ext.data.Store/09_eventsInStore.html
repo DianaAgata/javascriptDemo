@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            Ext.define("Book", {
+                extend: "Ext.data.Model",
+                fields: ["title", "author", "price"]
+            });
+
+            var bookStore = Ext.create("Ext.data.Store", {
+                //model: "Book", //does not work for some reason??
+                fields: ["title", "author", "price"],
+                data: [
+                    {title: "First Book", author: "Florin", price: 85.49},
+                    {title: "Second Book", author: "Lolos", price: 12.14},
+                    {title: "Third Book", author: "Envios", price: 45.57},
+                    {title: "Forth Book", author: "Envios", price: 49.99}
+                ],
+                autoLoad: false
+            });
+
+            bookStore.on("load",
+                function (src) {
+                    console.log("loaded " + src.getCount());
+                }
+            );
+
+            bookStore.load();
+
+            bookStore.on("update", function (src, record) {
+                console.log("updated " + record.get("title"));
+            });
+
+            bookStore.on("datachanged",
+                function (src) {
+                 console.log("datachaged " + src.getCount());
+                }
+            );
+
+            bookStore.add({title: "Final Book", author: "Gigi", price: 79.14});
+
+            bookStore.getAt(0).set("price", 50.00);
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>

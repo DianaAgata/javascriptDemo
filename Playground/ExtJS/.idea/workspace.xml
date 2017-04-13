@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/02_Id.html" line="26" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/03_Ext.data.association.Association/01_firstAsociation.html" line="66" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76c66563-1d22-475a-a786-fc1a91fac9ea" name="Default" comment="" />
@@ -15,20 +15,27 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="ExtJS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="05_validations.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/05_validations.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="01_arrayReader.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/05_Ext.data.Reader/01_arrayReader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="680">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="02_jsonReader.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/05_Ext.data.Reader/02_jsonReader.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -39,15 +46,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/02-basicOOP/02_Methods/03_selfClass.html" />
-        <option value="$PROJECT_DIR$/02-basicOOP/03_Inheritance/01_simpleInheritance.html" />
-        <option value="$PROJECT_DIR$/02-basicOOP/04_Mixins/01_myFirstMixin.html" />
-        <option value="$PROJECT_DIR$/02-basicOOP/05_Alias/01_myFirstAlias.html" />
-        <option value="$PROJECT_DIR$/02-basicOOP/06_Singleton/01_myFirstSingleton.html" />
-        <option value="$PROJECT_DIR$/02-basicOOP/08_Ext.Class/01_usingExt.Class.html" />
-        <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/01_myFirstComponent.html" />
-        <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/03_ItemIds.html" />
-        <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/02_Ids.html" />
         <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/04_autoEl.html" />
         <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/04_listeners.html" />
         <option value="$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/05_listeners.html" />
@@ -86,10 +84,19 @@
         <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/01_Ext.data.Connection/02_myFirstAjaxRequest.html" />
         <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/01_Ext.data.Connection/books.txt" />
         <option value="$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/01_myFirstModel.html" />
-        <option value="$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/02_getId.html" />
-        <option value="$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/03_modelWithProxy.html" />
-        <option value="$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/04_fields.html" />
         <option value="$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/05_validations.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/03_Ext.data.association.Association/01_firstAsociation.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/01_storeUsingFields.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/02_storeUsingModel.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/03_storeUsingDefine.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/04_sorting.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/05_filtering.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/06_find.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/06_query.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/08_storeWithInlineData.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/09_eventsInStore.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/05_Ext.data.Reader/01_arrayReader.html" />
+        <option value="$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/05_Ext.data.Reader/02_jsonReader.html" />
       </list>
     </option>
   </component>
@@ -100,9 +107,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="942" />
-    <option name="width" value="986" />
-    <option name="height" value="1038" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -137,6 +144,76 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="01_Ext.data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="05_Ext.data.Reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtJS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtJS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="04_WorkingWithData" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="01_Ext.data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="04_Ext.data.Store" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtJS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtJS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="04_WorkingWithData" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="01_Ext.data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="03_Ext.data.association.Association" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtJS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtJS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="04_WorkingWithData" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="01_Ext.data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="02_Ext.data.Model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -156,6 +233,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="01_Ext.data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="01_Ext.data.Connection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtJS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtJS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="03_ControlsAndLayout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -181,13 +276,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\DEV\git\javascriptDemo\Playground\ExtJS\04_WorkingWithData\02_Ext.data.Model" />
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\04_WorkingWithData\01_Ext.data\05_Ext.data.Reader" />
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\04_WorkingWithData\01_Ext.data\04_Ext.data.Store" />
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\04_WorkingWithData\01_Ext.data\03_Ext.data.association.Association" />
       <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\04_WorkingWithData\02_Ext.data.Model" />
       <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\04_WorkingWithData\01_Ext.data\01_Ext.data.Connection" />
-      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\02_Layouts" />
-      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component\08_Ext.container.Viewport" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\04_WorkingWithData\01_Ext.data" />
       <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout" />
       <recent name="E:\DEV\pers\javascriptDemo\Playground\ExtJS\03_ControlsAndLayout\01_Ext.Component" />
     </key>
@@ -209,6 +305,13 @@
       <method />
     </configuration>
     <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
@@ -268,9 +371,6 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="76c66563-1d22-475a-a786-fc1a91fac9ea" name="Default" comment="" />
@@ -282,12 +382,12 @@
       <workItem from="1491977866502" duration="7059000" />
       <workItem from="1491985238602" duration="32000" />
       <workItem from="1491985277671" duration="20099000" />
-      <workItem from="1492022004744" duration="5616000" />
+      <workItem from="1492064382737" duration="9527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40052000" />
+    <option name="totallyTimeSpent" value="43963000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -299,10 +399,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="942" y="0" width="986" height="1038" extended-state="0" />
-    <editor active="false" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24070248" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30876067" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853404" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -346,100 +446,16 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/01_myFirstModel.html</url>
-          <line>12</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/02_basicOOP/04_Mixins/01_myFirstMixin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02_basicOOP/05_Alias/01_myFirstAlias.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02_basicOOP/02_Methods/02_staticMembers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02_basicOOP/08_Ext.Class/01_usingExt.Class.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01_helloWorld/helloWorld02.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01_helloWorld/helloWorld03.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01_helloWorld/02_EventHandlers/helloWorldWithHandlers01.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01_helloWorld/02_EventHandlers/helloWorldWithHandlers02.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/06_hidden&amp;disabled.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="32" column="74" lean-forward="true" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/07_up__.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/02_Id.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/04_autoEl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -464,17 +480,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/10_addEvents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/12_eventsInExt.Component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
           <caret line="72" column="39" lean-forward="true" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -513,13 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/05_listeners&amp;renderTo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/01_Ext.container.Container/04_add&amp;remove.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="642">
@@ -531,6 +534,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -545,6 +549,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -569,10 +574,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/06_Ext.form.Panel/01_firstForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="98" column="28" lean-forward="true" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/07_Ext.toolbar.Toolbar/01_firstToolbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -643,6 +657,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -668,58 +683,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/06_Ext.form.Panel/01_firstForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="68" column="9" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/01_Ext.data.Connection/02_myFirstAjaxRequest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
+        <state relative-caret-position="493">
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/01_myFirstModel.html">
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/02_Ext.data.Model/01_myFirstModel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="527">
+          <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/02_getId.html">
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/02_Ext.data.Model/05_validations.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="30" column="15" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="30" selection-end-column="15" />
+        <state relative-caret-position="578">
+          <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/03_modelWithProxy.html">
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/03_Ext.data.association.Association/01_firstAsociation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="35" column="18" lean-forward="true" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+        <state relative-caret-position="676">
+          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/04_fields.html">
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/01_storeUsingFields.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        <state relative-caret-position="391">
+          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="29" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/02_Ext.data.Model/05_validations.html">
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/03_storeUsingDefine.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/06_find.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/05_filtering.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="12" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/02_storeUsingModel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/07_query.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="26" column="11" lean-forward="true" selection-start-line="26" selection-start-column="11" selection-end-line="29" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/02_Ext.data.Model/04_fields.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/02_Ext.data.Model/03_modelWithProxy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/08_storeWithInlineData.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/05_listeners&amp;renderTo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_ControlsAndLayout/01_Ext.Component/10_addEvents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/09_eventsInStore.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/04_Ext.data.Store/04_sorting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="39" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/05_Ext.data.Reader/01_arrayReader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_WorkingWithData/01_Ext.data/05_Ext.data.Reader/02_jsonReader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            Ext.define("Book",{
+                extend: "Ext.data.Model",
+                fields: ["title","author","price"]
+            });
+
+            Ext.define("BookStore",{
+                extend: "Ext.data.Store",
+                model: "Book"
+            });
+
+            var bookStore = Ext.create("BookStore");
+
+            bookStore.add({title : "First Book", author: "Florin", price: 85.49});
+            bookStore.add({title : "Second Book", author: "Lolos", price: 12.14});
+            bookStore.add({title : "Third Book", author: "Envios", price: 45.57});
+            bookStore.add({title : "Forth Book", author: "Envios", price: 49.99});
+
+            bookStore.sort("title", "ASC");
+            bookStore.sort([
+                {property: "price", direction: "DESC"},
+                {property: "title", direction: "ASC"}
+            ]);
+
+            bookStore.each(function (book){
+                console.log(book.get("title") + " , " + book.get("author"));
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>

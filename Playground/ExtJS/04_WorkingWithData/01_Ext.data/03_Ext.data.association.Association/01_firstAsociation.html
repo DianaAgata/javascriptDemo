@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            Ext.define("Continent", {
+               extend: "Ext.data.Model",
+                fields: ["name"]
+            });
+
+            Ext.define("City", {
+               extend: "Ext.data.Model",
+                fields: ["name"]
+            });
+
+            Ext.define("CountryDetails", {
+               extend: "Ext.data.Model",
+                fields: ["id","population"]
+            });
+
+            Ext.define("Country", {
+                extend: "Ext.data.Model",
+                fields: ["name", "capital"],
+                idProperty: "name",
+                hasMany: [{name: "cities", model: "City"}],
+                hasOne: [{model: "CountryDetails"}],
+                belongsTo: [{model: "Continent"}],
+                proxy: {
+                    type: "memory",
+                    data:{
+                        country: {
+                            name: "France",
+                            capital: "Paris",
+                            countrydetails: {
+                                id: "cd101",
+                                population: 654365526
+                            },
+                            cities: [
+                                {name:"Lyon"}, {name:"Avignon"}
+                            ],
+                            continent: {
+                                name: "Europe"
+                            }
+                        }
+                    },
+                    reader: {
+                        type: "json",
+                        root: "country"
+                    }
+                }
+            });
+
+            Country.load("France",{
+                success: function(record){
+                    var continent =  record.getContinent();
+                    console.log("Continent: ",continent.get("name"));
+                    var countryDetails = record.getCountryDetails();
+                    console.log("Population: ",countryDetails.get("population"));
+                    var cities = record.cities();
+                    var i=0;
+                    cities.each(function(city){
+                        console.log("City",function(){return ++i}(),": ",city.get("name"));
+                    });
+
+                }
+            })
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
