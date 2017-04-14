@@ -1,0 +1,8 @@
+{
+    "Countries" : [
+        {"name":"Spain", "cities":{name:"Barcelona"}},
+        {"name":"France", "cities":{name:"Barcelona"}},
+        {"name":"UK", "cities":{name:"Barcelona"}},
+        {"name":"Denmark", "cities":{name:"Barcelona"}},
+    ]
+}
