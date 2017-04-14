@@ -16,6 +16,13 @@
               level: 'beginner'
           },
 
+          applyTitle: function (title){
+            if (title === undefined){
+                alert('title undefined');
+                return title;
+            }
+          },
+
           construction: function(cofig){
               this.initConfig(config);
           }
@@ -28,6 +35,9 @@
       });
 
       session.setTitle('peters awesome session');
+
+//      var x;
+//      session.setTitle(x);
 
       console.log(session.getTitle());
 
