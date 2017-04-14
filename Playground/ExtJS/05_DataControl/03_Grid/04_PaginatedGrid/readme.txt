@@ -1,0 +1,1 @@
+I've configured this to run in IIS, so you must create an IIS website and browse the html site inside of it.
