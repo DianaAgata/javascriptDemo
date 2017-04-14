@@ -17,13 +17,26 @@
                 Ext.create('Ext.container.Viewport',{
                     items:[
                         {
-                            xtype: 'component' ,
-                            tpl: 'name: {first} {last}',
+
+                            tpl: 'Name: {first} {last}',
                             data:{
                                 first: 'Florin',
                                 last: 'Asavei'
                             },
-                            padding:20
+                            padding:20,
+                            width:200,
+                            height:200,
+                            style:{
+                                border: '2px solid red'
+                            },
+                            resizable: true,
+                            listeners:{
+                                resize: {
+                                    fn: function (component, width, height){
+                                        console.log("w/h " + width + " " + height);
+                                    }
+                                }
+                            }
                         }
 
                     ]

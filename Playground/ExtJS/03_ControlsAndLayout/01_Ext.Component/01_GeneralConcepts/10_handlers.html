@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+
+        Ext.application({
+            name: 'MyApp',
+            launch: function () {
+                Ext.create('Ext.container.Viewport', {
+                    items: [
+                        {
+                            xtype: 'button',
+                            text: 'disable',
+                            handler: function() {
+                                this.up().down("#myComponent").disable();
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            text: 'enable',
+                            handler: function() {
+                                this.up().down("#myComponent").enable();
+                            }
+                        },
+                        {
+                            itemId: "myComponent",
+                            tpl: 'Name: {first} {last}',
+                            data: {
+                                first: 'Florin',
+                                last: 'Asavei'
+                            },
+                            padding: 20,
+                            width: 200,
+                            height: 200,
+                            style: {
+                                border: '2px solid red'
+                            },
+                            resizable: true,
+                            listeners: {
+                                resize: {
+                                    fn: function (component, width, height) {
+                                        console.log("w/h " + width + " " + height);
+                                    }
+                                }
+                            }
+                        }
+
+                    ]
+                });
+            }
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
