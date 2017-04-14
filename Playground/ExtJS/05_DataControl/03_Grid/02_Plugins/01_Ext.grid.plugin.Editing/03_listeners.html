@@ -80,21 +80,21 @@
                 ],
                 listeners: {
                     beforeedit: function(src,e){
-                      var record = e.record;
-                      console.log("beforeedit: " + record.get("price"));
-                  },
+                        var record = e.record;
+                        console.log("beforeedit: " + record.get("price"));
+                    },
                     edit: function(src,e){
-                      var record = e.record;
-                      console.log("edit: " + record.get("price"));
-                  },
+                        var record = e.record;
+                        console.log("edit: " + record.get("price"));
+                    },
                     canceledit: function(src,e){
-                      var record = e.record;
-                      console.log("canceledit: " + record.get("price"));
-                  },
+                        var record = e.record;
+                        console.log("canceledit: " + record.get("price"));
+                    },
                     validateedit: function(src,e){
-                      var record = e.record;
-                      console.log("validateedit: " + record.get("price"));
-                  }
+                        var record = e.record;
+                        console.log("validateedit: " + record.get("price"));
+                    }
 
                 },
                 renderTo: Ext.getBody()

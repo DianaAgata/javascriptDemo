@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            var bookStore = Ext.create('Ext.data.Store', {
+                fields: [
+                    "isbn",
+                    "title",
+                    "author",
+                    "price",
+                    {name: "publishedOn", type: "date", format: "MM/dd/YYY"},
+                    "pdfFormat",
+                    "wikipedia",
+                    "description"
+                ],
+                data: [
+                    {
+                        isbn: "1430219424",
+                        title: "First Book",
+                        author: "Florin",
+                        price: 17.45,
+                        publishedOn: "08/10/2015",
+                        pdfFormat: false,
+                        wikipedia: "http://google.com",
+                        description: "Decors sunt cannabiss de audax gabalium."
+                    },
+                    {
+                        isbn: "1430219898",
+                        title: "Second Book",
+                        author: "Lorem",
+                        price: 14.45,
+                        publishedOn: "08/10/2015",
+                        pdfFormat: true,
+                        wikipedia: "http://google.com",
+                        description: "Hercle, orgia azureus!."
+                    },
+                    {
+                        isbn: "1430349424",
+                        title: "Third Book",
+                        author: "Ipsum",
+                        price: 13.99,
+                        publishedOn: "08/10/2015",
+                        pdfFormat: true,
+                        wikipedia: "http://google.com",
+                        description: "A falsis, repressor magnum genetrix."
+                    }
+                ]
+            });
+
+            Ext.create("Ext.grid.Panel", {
+                store: bookStore,
+                height: 300,
+                title: "My Books",
+                selType: "cellmodel",
+                plugins: [
+                    {
+                        ptype: "rowexpander",
+                        rowBodyTpl: [
+                            '<p>{description}</p>'
+                        ]
+                    }
+                ],
+                columns: [
+                    {
+                        text: "Book Title",
+                        dataIndex: 'title'
+                    },
+                    {
+                        text: "Price",
+                        dataIndex: 'price',
+                        xtype: 'numbercolumn'
+                    },
+                    {
+                        text: "PDF format",
+                        dataIndex: 'pdfFormat',
+                        xtype: 'booleancolumn',
+                        trueText: "Available",
+                        falseText: "Not available"
+                    },
+                    {
+                        text: "Book Publish date",
+                        dataIndex: 'publishedOn',
+                        xtype: "datecolumn",
+                        format: "M d, Y"
+                    }
+
+                ],
+
+                renderTo: Ext.getBody()
+            });
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>

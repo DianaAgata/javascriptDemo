@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            var bookStore = Ext.create('Ext.data.Store', {
+                fields: [
+                    "isbn",
+                    "title",
+                    "author",
+                    "price",
+                    "pages",
+                    {name: "publishedOn", type: "date", format: "MM/dd/YYY"},
+                    "pdfFormat",
+                    "wikipedia",
+                    "description",
+                    "type"
+                ],
+                groupField: "type",
+                data: [
+                    {
+                        isbn: "1430219424",
+                        title: "First Book",
+                        author: "Florin",
+                        price: 17.45,
+                        pages:180,
+                        publishedOn: "08/10/2015",
+                        pdfFormat: false,
+                        wikipedia: "http://google.com",
+                        description: "Fidess sunt triticums de barbatus lamia. Nix, hilotae, et xiphias. Plasmator de altus equiso, dignus lumen!",
+                        type: "advendure"
+                    },
+                    {
+                        isbn: "1430219898",
+                        title: "Second Book",
+                        author: "Lorem",
+                        price: 14.45,
+                        pages:220,
+                        publishedOn: "08/10/2015",
+                        pdfFormat: true,
+                        wikipedia: "http://google.com",
+                        description: "Hercle, orgia azureus!. Peritus decor interdum resuscitabos pars est. Abaculuss assimilant!",
+                        type: "advendure"
+                    },
+                    {
+                        isbn: "1430349424",
+                        title: "Third Book",
+                        author: "Ipsum",
+                        price: 13.99,
+                        pages:280,
+                        publishedOn: "08/10/2015",
+                        pdfFormat: true,
+                        wikipedia: "http://google.com",
+                        description: "A falsis, repressor magnum genetrix. Nunquam reperire vox. A falsis, nixus primus turpis.",
+                        type: "history"
+                    }
+                ]
+            });
+
+            Ext.create("Ext.grid.Panel", {
+                store: bookStore,
+                height: 350,
+                title: "My Books",
+                features: [
+                    {
+                        ftype: 'groupingsummary',
+                        groupHeaderTpl: "Type: {name}",
+                        collapsible: true,
+                        showSummaryRow: true
+                    }
+                ],
+                columns: [
+                    {
+                        text: "Book Title",
+                        dataIndex: 'title',
+                        summaryType: "count",
+                        summaryRenderer: function (value){
+                            return "<b>Books count: " + value + "</b>";
+                        }
+                    },
+                    {
+                        text: "Price",
+                        dataIndex: 'price',
+                        xtype: 'numbercolumn',
+                        summaryType: "sum",
+                        summaryRenderer: function(value){
+                            return "<b>Total price : $"+ Ext.Number.toFixed(value, 0) + "</b>";
+                        }
+                    },
+                    {
+                        text: "Pages",
+                        dataIndex:'pages',
+                        summaryType: "average",
+                        summaryRenderer: function (value){
+                            return "<b>Average pages: " + Math.floor(value) + "</b>";
+                        }
+                    },
+                    {
+                        text: "PDF format",
+                        dataIndex: 'pdfFormat',
+                        xtype: 'booleancolumn',
+                        trueText: "Available",
+                        falseText: "Not available"
+                    },
+                    {
+                        text: "Book Publish date",
+                        dataIndex: 'publishedOn',
+                        xtype: "datecolumn",
+                        format: "M d, Y"
+                    }
+
+                ],
+
+                renderTo: Ext.getBody()
+            });
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
