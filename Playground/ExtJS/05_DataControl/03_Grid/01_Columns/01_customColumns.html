@@ -17,7 +17,8 @@
                 data: [
                     {isbn: "1430219424", title: "First Book", author: "Florin", price:17.45},
                     {isbn: "1430219898", title: "Second Book", author: "Lorem", price:14.45},
-                    {isbn: "1430349424", title: "Third Book", author: "Ipsum", price:13.99}
+                    {isbn: "1430349424", title: "Third Book", author: "Ipsum", price:13.99},
+                    {isbn: "1434749424", title: "Forth Book", author: "Meme", price:23.99}
                 ]
             });
 
@@ -52,7 +53,7 @@
                         renderer: Ext.util.Format.usMoney
                     }
                 ],
-                renderTo: Ext.getBody()
+                renderTo:  Ext.get("myGrid")
             });
 
 
@@ -64,6 +65,8 @@
 </head>
 <body>
 
+<h1>My Books</h1>
+<div id="myGrid"></div>
 
 </body>
 </html>
