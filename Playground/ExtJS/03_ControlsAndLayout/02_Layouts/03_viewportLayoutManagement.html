@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+
+
+        var myComp1 =  Ext.create("Ext.Component",{
+            html: 'component1'
+        });
+
+        var myComp2 =  Ext.create("Ext.Component",{
+            html: 'component2'
+        });
+
+        var myComp3 =  Ext.create("Ext.Component",{
+            html: 'component3'
+        });
+
+        var myComp4 =  Ext.create("Ext.Component",{
+            html: 'component3'
+        });
+
+        var mycontainer =  Ext.create("Ext.container.Container",{
+            items:[myComp1,myComp2,myComp3,myComp4],
+            layout: 'vbox'
+        });
+
+
+
+        Ext.application({
+            name: 'MyApp',
+            launch: function(){
+                Ext.create('Ext.container.Viewport',{
+                   items: [
+
+                          mycontainer
+
+                   ]
+                });
+            }
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
