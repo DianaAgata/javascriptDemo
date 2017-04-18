@@ -9,6 +9,10 @@ Ext.application({
         'SE.view.MainView'
     ],
 
+    controllers:[
+        'SE.controller.SessionController'
+    ],
+
     stores:[
       'Sessions'
     ],
