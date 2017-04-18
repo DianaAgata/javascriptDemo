@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.define("SessionModel",{
+            extend: "Ext.data.Model",
+            fields:[
+                {name:'id', type:'int'},
+                {name:'title', type:'string'},
+                {name:'sessionLevel', type:'int'},
+                {name:'approved', type:'bool', defaultValue:false}
+            ],
+
+            validations:[
+                {type:'length',field:'title',min:3},
+                {type:'inclusion',field: 'sessionLevel', list:[1,2,3]}
+            ],
+
+            proxy:{
+                type:'rest',
+                url: '/api/session',
+                reader: {
+                    type: 'json'
+                }
+            }
+        });
+
+        var MySession1 = Ext.create("SessionModel",{
+            title: 'C++',
+            sessionLevel: 2,
+            approved:true
+        });
+
+
+
+       // debugger;
+
+        if(!MySession1.isValid()){
+            var errors = MySession1.validate();
+            errors.each(function(rec){
+                console.log(rec);
+            });
+        }else{
+            debugger;
+        }
+
+
+
+        MySession1.save({
+            success: function(session){
+                console.log(session.getData());
+
+                MySession1.set('approved',false);
+
+                MySession1.save({
+                    success: function(session1){
+                        console.log(session1.getData());
+                    }
+                });
+
+
+            }
+        });
+
+        var sessionBringBack = Ext.ModelManager.getModel('SessionModel');
+
+        sessionBringBack.load(66,{
+            success: function(session){
+                console.log(session.getData());
+                session.destroy();
+            }
+        });
+
+
+
+
+        var MySession2 = Ext.create("SessionModel",{
+           title: 'C#',
+            sessionLevel: 3
+        });
+
+        var MySession3 = Ext.create("SessionModel",{
+             title: 'Java',
+            sessionLevel: 2
+        });
+
+        console.log(MySession1.get('title'));
+        console.log(MySession2.get('title'));
+        console.log(MySession3.get('title'));
+
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>

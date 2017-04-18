@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+
+
+        Ext.application({
+            name: 'MyApp',
+            launch: function () {
+
+
+                Ext.define("SessionGridPanel",{
+
+                    extend: 'Ext.grid.Panel',
+                    alias: 'widget.sessiongridpanel',
+                    store: {
+                        fields:[
+                            'id',
+                            'title',
+                            'approved'
+                        ],
+                        data:[
+                            {
+                                id:101,
+                                title:"Javascript for dummies",
+                                approved:true
+                            },
+                            {
+                                id:102,
+                                title:"C# for Smarties",
+                                approved:false
+                            },
+                            {
+                                id:103,
+                                title:"ExtJS for everyone",
+                                approved:true
+                            }
+
+                        ]
+                    },
+
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'id',
+                            text: 'Id'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'title',
+                            text: 'Title',
+                            flex:1,
+                            minWidth: 100,
+                            width: 75
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'approved',
+                            text: 'Approved'
+
+                        }
+
+                    ]
+
+                });
+
+
+
+                Ext.create('Ext.container.Viewport', {
+                    html: 'Hello!',
+                    layout: {
+                        type: 'border'
+
+                    },
+                    items: [
+                        {
+                            region: 'west',
+                            xtype: 'panel',
+                            layout: {
+                                type: 'vbox',
+                                align: 'stretch'
+                            },
+                            flex: 1,
+                            split: true,
+                            items: [
+                                {
+                                    xtype: 'sessiongridpanel',
+                                    flex: 3
+                                },
+                                {
+                                    xtype: 'splitter',
+                                    width: 1
+                                },
+                                {
+                                    xtype: 'panel',
+                                    html: 'Speakers Panel',
+                                    flex: 2
+
+                                }
+                            ]
+                        },
+                        {
+                            region: 'center',
+                            xtype: 'panel',
+                            html: 'Details Panel',
+                            flex: 2,
+                            title: 'Details Panel',
+                            collapsible: true,
+                            collapsed: false,
+                            collapseDirection: 'right'
+                        }
+                    ]
+                });
+
+
+            }
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
