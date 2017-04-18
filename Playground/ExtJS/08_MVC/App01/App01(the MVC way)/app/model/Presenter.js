@@ -22,8 +22,20 @@ Ext.define('SE.model.Presenter', {
                return rec.get('firstName') + ' ' + rec.get('lastName');
             },
             name: 'firstLast',
-
+        },
+        {
+            name: 'webSite'
+        },
+        {
+            name: 'bio'
+        },
+        {
+            name: 'imageUrl'
+        },
+        {
+            name: 'imagePicture'
         }
+
 
     ],
 
