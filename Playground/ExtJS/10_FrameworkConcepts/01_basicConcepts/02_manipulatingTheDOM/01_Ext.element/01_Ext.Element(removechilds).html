@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            //removing by CSS selector
+            var myDiv1 = Ext.get('div1');
+            var firstChild = myDiv1.down('div:first-child');
+            firstChild.remove();
+
+            var myDiv1 = Ext.get('div1');
+            var lastChild = myDiv1.down('div:last-child');
+            lastChild.remove();
+
+            //removing by ID
+            Ext.get('child4').remove();
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+<style type="text/css"> .myDiv {
+    border: 1px solid #AAAAAA;
+    width: 200px;
+    height: 35px;
+    cursor: pointer;
+    padding: 2px 2px 2px 2px;
+    margin: 2px 2px 2px 2px;
+} </style>
+
+
+<div id='div1' class="myDiv">
+    <div id='child1'>Child 1</div>
+    <div class='child2'>Child 2</div>
+    <div class='child3'>Child 3</div>
+    <div id='child4'>Child 4</div>
+    <div>Child 5</div>
+</div>
+
+
+</body>
+</html>
