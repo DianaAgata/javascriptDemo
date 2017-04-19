@@ -1,16 +1,16 @@
-Ext.define('SE.store.Sessions',{
+Ext.define('SE.store.Sessions', {
     extend: 'Ext.data.Store',
     model: 'SE.model.Session',
 
-    autoLoad: true,
-    autoSync: true,
-
-    sorters:[
-        {property: 'approved'},
-        {property: 'title'}
-
+    sorters: [
+        {
+            property: 'title'
+        }
     ],
-    groupField: 'sessionTimeDateTime'
+    groupField: 'sessionTimeDateTime',
 
+    autoSync: true,
+    autoLoad: true
+    
 
 });

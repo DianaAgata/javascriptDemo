@@ -2,26 +2,26 @@ Ext.define('SE.model.Presenter', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.Filed',
+        'Ext.data.Field',
         'Ext.data.proxy.Rest',
         'Ext.data.reader.Json'
     ],
 
     fields: [
         {
-            name:'id'
+            name: 'id'
         },
         {
-            name: 'firstName',
+            name: 'firstName'
         },
         {
-            name: 'lastName',
+            name: 'lastName'
         },
         {
-            convert: function (v, rec) {
-               return rec.get('firstName') + ' ' + rec.get('lastName');
+            convert: function(v, rec) {
+                return rec.get("firstName") + ' ' + rec.get('lastName');
             },
-            name: 'firstLast',
+            name: 'firstLast'
         },
         {
             name: 'webSite'
@@ -35,8 +35,6 @@ Ext.define('SE.model.Presenter', {
         {
             name: 'imagePicture'
         }
-
-
     ],
 
     proxy: {
@@ -47,5 +45,4 @@ Ext.define('SE.model.Presenter', {
             root: 'data'
         }
     }
-
 });

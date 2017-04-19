@@ -2,33 +2,38 @@ Ext.Loader.setConfig({
     enabled: true
 });
 
-
 Ext.application({
     name: 'SE',
+
     requires: [
         'SE.view.MainView'
     ],
 
-    controllers:[
+    controllers: [
         'SE.controller.SessionController'
     ],
 
-    stores:[
-      'Sessions'
+    stores: [
+        'Sessions',
+        'SessionPresenters',
+        'Presenters'
     ],
 
-    models:[
-        'Session'
+    models: [
+        'Session',
+        'SessionPresenter',
+        'Presenter'
     ],
 
     views: [
         'Sessions',
-        'SessionForm'
+        'SessionForm',
+        'Presenters',
+        'Details'
     ],
 
-    launch: function () {
+
+    launch: function() {
         Ext.create('SE.view.MainView');
     }
-
 });
-

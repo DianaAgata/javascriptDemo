@@ -1,15 +1,11 @@
 Ext.define('SE.view.MainView', {
     extend: "Ext.container.Viewport",
-    layout: {
-        type: 'fit'
-    },
+    layout: 'fit',
     items: [
         {
             xtype: 'panel',
             resizable: false,
-            layout: {
-                type: 'border'
-            },
+            layout: 'border',
             collapsed: false,
             items: [
                 {
@@ -28,25 +24,18 @@ Ext.define('SE.view.MainView', {
                             xtype: 'splitter'
                         },
                         {
-                            //xtype: 'panel',
-                            html: 'Speakers Panel',
+                            xtype: 'presenters',
                             flex: 2
-
                         }
                     ]
                 },
                 {
-                    region: 'east',
-                    split: true,
-                    //xtype: 'panel',
-                    html: 'Details Panel',
+                    xtype: 'detailspanel',
                     flex: 2,
-                    title: 'Details Panel'
-
+                    region: 'east',
+                    split: true
                 }
             ]
         }
     ]
-
-
 });

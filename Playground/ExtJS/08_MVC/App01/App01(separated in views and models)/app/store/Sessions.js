@@ -12,5 +12,4 @@ Ext.define('SE.store.Sessions',{
     ],
     groupField: 'sessionTimeDateTime'
 
-
 });

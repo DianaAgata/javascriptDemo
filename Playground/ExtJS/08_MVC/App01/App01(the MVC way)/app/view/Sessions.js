@@ -1,12 +1,28 @@
-Ext.define("SE.view.Sessions",{
-
+Ext.define("SE.view.Sessions", {
     extend: 'Ext.grid.Panel',
     alias: 'widget.sessiongridpanel',
 
 
     store: 'Sessions',
+ 
+    features: [
+        {
+            ftype: 'grouping',
+            startCollapsed: false,
+            groupHeaderTpl: [
+                '{[values.rows[0].get(\'sessionTimePretty\')]} (Session Count: {rows.length})'
+            ]
+        }
+    ],
 
     columns: [
+        {
+            xtype: 'gridcolumn',
+            dataIndex: 'title',
+            text: 'Title',
+            flex: 1,
+            minWidth: 150
+        },
         {
             xtype: 'gridcolumn',
             dataIndex: 'id',
@@ -14,32 +30,15 @@ Ext.define("SE.view.Sessions",{
         },
         {
             xtype: 'gridcolumn',
-            dataIndex: 'title',
-            text: 'Title',
-            flex:1,
-            minWidth: 100,
-            width: 75
+            width: 200,
+            dataIndex: 'sessionTimePretty',
+            text: 'Session Time'
         },
         {
-            xtype: 'gridcolumn',
+            xtype: 'checkcolumn',
             dataIndex: 'approved',
             text: 'Approved'
-
-        },
-        {
-            dataIndex: 'sessionTimePretty',
-            text: 'Session Start Time',
-            width: 180
         }
-
     ],
-    features: [
-        {
-            ftype: 'grouping',
-            groupHeaderTpl:[
-                '{[values.rows[0].get(\'sessionTimePretty\')]} (Sessions Count:{rows.length})'
-            ]
-        }
-    ]
 
 });
