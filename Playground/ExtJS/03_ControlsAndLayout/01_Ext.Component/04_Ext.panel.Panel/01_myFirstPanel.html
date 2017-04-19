@@ -17,12 +17,80 @@
                 Ext.MessageBox.alert('You Clicked', btn.text);
             };
 
-            fileBtn = Ext.create('Ext.button.Button',{
+            var fileBtn = Ext.create('Ext.button.Button',{
                text: 'File',
                 handler: myBtnHandler
             });
 
-            editBtn =
+            var editBtn = Ext.create('Ext.button.Button',{
+               text: 'Edit',
+                handler: myBtnHandler
+            });
+
+            var tbFill =  new Ext.toolbar.Fill();
+
+            var myTopToolbar = Ext.create('Ext.toolbar.Toolbar',{
+               items: [
+                   fileBtn,
+                   tbFill,
+                   editBtn
+               ]
+            });
+
+            var myBottomToolbar = [
+                {
+                    text : 'Save',
+                    handler: myBtnHandler
+                },
+                '-',
+                {
+                    text: 'Cancel',
+                    handler: myBtnHandler
+                },
+                '->',
+                '<b>Items open: 1</b>'
+            ];
+
+            var myPanel = Ext.create('Ext.panel.Panel',{
+                width: 200,
+                height: 150,
+                collapsible: true,
+                renderTo: Ext.getBody(),
+                title: 'Ext Panels rock!',
+
+                buttonAlign: 'left',
+                buttons:[
+                    {
+                        text: 'Press me!',
+                        handler: myBtnHandler
+                    }
+                ],
+
+                tools:[
+                    {
+                        type: 'gear',
+                        handler: function (ev, toolEl, panel) {
+                            var toolClassName = toolEl.className.split(' ');
+                            var toolClass = toolClassName[1];
+                            var toolId = toolClass.split('-')[2];
+
+                            Ext.MessageBox.alert('You Clicked', 'Tool ' + toolId);
+                        }
+                    },
+                    {
+                        type: 'help',
+                        handler: function () {
+                            Ext.MessageBox.alert('You Clicked','The help tool');
+                        }
+                    }
+                ],
+
+                tbar: myTopToolbar,
+                bbar: myBottomToolbar,
+                html: 'My first Toolbar Panel!'
+            });
+
+
 
 
         });

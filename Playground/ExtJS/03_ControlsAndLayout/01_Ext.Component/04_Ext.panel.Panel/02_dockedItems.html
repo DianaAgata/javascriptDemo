@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+
+            var myBtnHandler = function (btn) {
+                Ext.MessageBox.alert('You Clicked', btn.text);
+            };
+
+
+            var tbFill = new Ext.toolbar.Fill();
+
+            var buttons = [
+                {
+                    text: 'Btn 1',
+                    handler: myBtnHandler
+                },
+                {
+                    text: 'Btn 2',
+                    handler: myBtnHandler
+                },
+                {
+                    text: 'Btn 3',
+                    handler: myBtnHandler
+                }
+            ];
+
+            var topDockedToolbar = {
+                xtype: 'toolbar',
+                dock: 'top',
+                items: buttons
+            };
+
+            var myPanel = Ext.create('Ext.panel.Panel', {
+                width: 350,
+                height: 250,
+                collapsible: true,
+                renderTo: Ext.getBody(),
+                title: 'Ext Panels rock!',
+
+                buttonAlign: 'left',
+                buttons: {
+                    items: buttons
+                },
+
+                dockedItems:[
+                    topDockedToolbar
+                ],
+
+
+                html: 'My first Toolbar Panel!'
+            });
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
