@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            var remoteJsonStore = Ext.create('Ext.data.JsonStore',{
+                soreId: 'people',
+                fields: [
+                    'fullName',
+                    'id'
+                ],
+                proxy: {
+                    type: 'jsonp',
+                    url: 'http://extjsinaction.com/dataQuery.php',
+                    reader:{
+                        type: 'json',
+                        root: 'records',
+                        totalProperty: 'totalCount'
+                    }
+                }
+            });
+
+            var combo = {
+                xtype: 'combo',
+                queryMode: 'remote',
+                fieldLabel: 'Search by name',
+                width: 320,
+                forceSelecton: true,
+                displayField: 'fullName',
+                valueField: 'id',
+                minChars: 1,
+                store: remoteJsonStore,
+                typeAhead: true,
+                triggerAction: 'all',
+                typeAheadDelay:1,
+                mode: 'remote'
+            };
+
+
+            var win = Ext.create("Ext.window.Window",{
+                title: "Find and replace",
+                modal: true,
+
+                items:[
+                    combo
+                ],
+            });
+
+            win.show();
+
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            Ext.QuickTips.init();
+
+            var fpItems = [
+                {
+                    fieldLabel: 'Password',
+                    allowBlank: false,
+                    inputType: 'password'
+                },
+                {
+                    fieldLabel: 'File',
+                    allowBlank: false,
+                    xtype: 'filefield'
+                },
+                {
+                    xtype: 'textarea',
+                    fieldLabel: 'My TextArea',
+                    name: 'myTextArea',
+                    anchor: '100%',
+                    height: 100
+                }
+            ];
+
+            var fp = Ext.create('Ext.form.Panel', {
+                renderTo: Ext.getBody(),
+                width: 400,
+                height: 240,
+                title: 'Exercising textfields',
+                frame: true,
+                bodyStyle: 'padding: 6px',
+                labelWidth: 126,
+                defaultType: 'textfield',
+                defaults: {
+                    msgTarget: 'side',
+                    anchor: '-20'
+                },
+                items: fpItems
+            });
+
+            //fp.getForm().isValid();
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
