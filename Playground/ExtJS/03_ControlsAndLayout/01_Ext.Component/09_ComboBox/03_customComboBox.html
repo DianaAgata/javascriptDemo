@@ -7,21 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <style>
+        .combo-name {
+            font-weight: bold;
+            font-size: 11px;
+            background-color: #FFFF99;
+        }
+
+        .combo-full-address {
+            font-size: 11px;
+            color: #666666;
+        }
+    </style>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
     <script type="text/javascript">
 
         Ext.onReady(function () {
 
-            var remoteJsonStore = Ext.create('Ext.data.JsonStore',{
+            var remoteJsonStore = Ext.create('Ext.data.JsonStore', {
                 soreId: 'people',
                 fields: [
                     'fullName',
-                    'id'
+                    'id',
+                    'street',
+                    'city',
+                    'state',
+                    'zip'
+
                 ],
                 proxy: {
                     type: 'jsonp',
                     url: 'http://extjsinaction.com/dataQuery.php',
-                    reader:{
+                    reader: {
                         type: 'json',
                         root: 'records',
                         totalProperty: 'totalCount'
@@ -29,35 +46,40 @@
                 }
             });
 
-            var combo = {
-                xtype: 'combo',
-                queryMode: 'remote',
+            var combo = Ext.create('Ext.form.field.ComboBox', {
                 fieldLabel: 'Search by name',
-                width: 320,
-                forceSelecton: true,
+                forceSelection: true,
                 displayField: 'fullName',
-                valueField: 'id',
+                loadingText: 'Querying....',
+                pageSize: 20,
+                width: 320,
                 minChars: 1,
-                store: remoteJsonStore,
-                typeAhead: true,
+                valueField: 'id',
                 triggerAction: 'all',
-                typeAheadDelay:1,
-                mode: 'remote',
-                pageSize : 20
-            };
+                store: remoteJsonStore,
+                listConfig: {
+                    getInnerTpl: function () {
+                        return '<div data-qtip="{fullName}">' +
+                            '<div class="combo-name">{fullName}</div>' +
+                            '<div class="combo-full-address"> {street} </div>' +
+                            '<div class="combo-full-address">' +
+                            '{city} {state} {zip}</div>' +
+                            '</div>';
+                    }
+                }
+            });
 
 
-            var win = Ext.create("Ext.window.Window",{
+            var win = Ext.create("Ext.window.Window", {
                 title: "Find and replace",
                 modal: true,
 
-                items:[
+                items: [
                     combo
                 ],
             });
 
             win.show();
-
 
 
         });
