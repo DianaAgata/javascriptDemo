@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            var myCallback = function (btn, text) {
+                console.info('You pressed ' + btn);
+                if (text) {
+                    console.info('You entered : ' + text)
+                }
+            };
+
+
+            Ext.Msg.show({
+                title: 'Hold on there cowboy!',
+                msg: 'Are you sure you want to reboot the internet?',
+                width: 300,
+                buttons: Ext.Msg.YESNOCANCEL,
+                buttonText: { yes : 'Sure thing!', cancel : 'No way! '},
+                fn: myCallback,
+                icon: Ext.MessageBox.INFO
+            });
+
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
