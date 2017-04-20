@@ -12,18 +12,21 @@
 
         Ext.onReady(function () {
 
-            Ext.create("Ext.panel.Panel",{
-                layout: "border",
-                renderTo: Ext.getBody(),
+            var myWin = Ext.create("Ext.Window", {
+                layout: "fit",
                 height: 200,
-                width:200,
-                items :[
+                width: 200,
+                border:false,
+                items: [
                     {
-                        xtype: "textfield",
-                        fieldLabel: "Email"
+                        title:'Panel1',
+                        html: 'I fit in my parent!',
+                        frame: true
                     }
                 ]
             });
+
+            myWin.show();
 
         });
 

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            var myWin = Ext.create("Ext.Window",{
+                height:200,
+                width: 400,
+                autoScroll: true,
+                id: 'myWin',
+                title: 'A window with a Cclumn layout',
+                layout: 'column',
+                defaults: {
+                    frame: true
+                },
+                items: [
+                    {
+                        title: 'Col 1',
+                        id: 'col1',
+                        columnWidth: .3
+                    },
+                    {
+                        title: 'Col 2',
+                        html: "20% relative width",
+                        columnWidth: .2
+                    },
+                    {
+                        title: 'Col 3',
+                        html: "100px foxed width",
+                        width: 100
+                    },
+                    {
+                        title: 'Col 4',
+                        frame: true,
+                        html: "50% relative width",
+                        columnWidth: .5
+                    }
+                ]
+            });
+
+            myWin.show();
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>

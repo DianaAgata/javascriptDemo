@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            Ext.create("Ext.Window",{
+                layout: 'vbox',
+                height:400,
+                width: 400,
+                title: 'A Container with a HBox layout',
+                layoutConfig:{
+                    pack: 'center', //this is the default
+                    align: 'top'
+                },
+                defaults:{
+                    frame: 'true',
+                    width: 75
+                },
+                items: [
+                    {
+                        title: 'Panel 1',
+                        height: 100
+                    },
+                    {
+                        title: 'Panel 2',
+                        height: 75,
+                        width: 100
+                    },
+                    {
+                        title: 'Panel 3',
+                        height: 200
+                    }
+                ]
+            }).show();
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
