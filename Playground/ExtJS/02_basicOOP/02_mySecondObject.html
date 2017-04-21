@@ -10,12 +10,13 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
     <script type="text/javascript">
 
-        Ext.define("MyApp.Client",{
-            name: "John",
+        Ext.define("MyApp.Client",{ //Step1 : defining the name of our class
+            name: "John",    //Step2: defining the properties and methods of our class
             lastName: "Doe",
 
-            constructor: function(config){
-                Ext.apply(this, config || {});
+            constructor: function(config){  //Step3: if we don't define this costructor method, an empty function will be used instead
+
+                Ext.apply(this, config || {});  //Step4: we are setting the values for the new instance that is being created, the config object should have the properties that we can modify. If you don't pass in any params, the default values will be used when creating a new instance
                 console.log("I'm a new client!");
             }
 
