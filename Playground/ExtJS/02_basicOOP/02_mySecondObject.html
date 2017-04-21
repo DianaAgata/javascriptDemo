@@ -26,12 +26,20 @@
 
         console.log(client.name);
 
+
         var client2 = Ext.create("MyApp.Client",{
             name: "Suzana",
             lastName: "Smith"
         });
 
         console.log(client2.name);
+
+
+        var client3 = Ext.create("MyApp.Client");
+
+        client3.name="Florin";
+
+        console.log(client3.name);
 
     </script>
 
