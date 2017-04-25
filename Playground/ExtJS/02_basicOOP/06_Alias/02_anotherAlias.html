@@ -18,25 +18,25 @@
         });
 
         Ext.onReady(function () {
-            Ext.create("widget.mypanel", { //Option 1
+            Ext.create("widget.mypanel", { //Option 1: the create method accepts the alias too
                 renderTo: Ext.getBody()
-            }); //Option 2
+            });
 
-            Ext.ClassManager.instantiateByAlias("widget.mypanel", {
+            Ext.ClassManager.instantiateByAlias("widget.mypanel", { //Option 2: we use the instantiateByAlias
                 renderTo: Ext.getBody()
-            }); //Option 3
+            });
 
-            Ext.ClassManager.instantiate("widget.mypanel", {
+            Ext.ClassManager.instantiate("widget.mypanel", { //Option 3: We use the instantiate method from the ClassManager class, which actually is the same as using the Ext.create method.
                 renderTo: Ext.getBody()
             });
 
 
-            var win = Ext.create("Ext.window.Window", {
+            var win = Ext.create("Ext.window.Window", { //Option 4: Create an instance of the class by its alias using the xtype property when the main window is created.
                 title: "Window",
                 width: 350,
                 height: 250,
                 items: [{
-                    xtype: "mypanel" //Option 4
+                    xtype: "mypanel" //We don't need to define the widget prefix. The Ext identifies that we're trying to create a component so it assumes the given xtype property should be prefixed by widget
                 }]
             });
             win.show();
