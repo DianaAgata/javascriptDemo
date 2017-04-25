@@ -10,21 +10,15 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
     <script type="text/javascript">
 
-        Ext.define("Employee",{
-            alias: "emp",
-            config: {
-                employeeid : "",
-                name: "",
-                salary:0
-            },
-            constructor : function (cfg){
-                console.log("creating employee");
-                this.initConfig(cfg);
-            }
+        Ext.define("MyApp.Constants", {
+            singleton: true, //Step 1 : setting the singleton property to true
+            BASE_PATH: "/myapp", //Step 2 : defining properties for the singleton
+            ATTEMPTS: 5,
+            TIMEOUT: 6000
         });
 
-        Ext.create("emp");
-
+        console.log(MyApp.Constants.BASE_PATH);
+        Ext.create("MyApp.Constants"); //Throws an error
 
 
     </script>

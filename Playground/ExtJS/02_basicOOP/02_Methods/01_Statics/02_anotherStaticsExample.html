@@ -10,21 +10,23 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
     <script type="text/javascript">
 
-        Ext.define("Employee",{
-            alias: "emp",
-            config: {
-                employeeid : "",
-                name: "",
-                salary:0
+        Ext.define("MyApp.data.Client", {
+            statics: { //Step 1
+                sequence: 0,
+                nextId: function () {
+                    return ++this.sequence;
+                }
             },
-            constructor : function (cfg){
-                console.log("creating employee");
-                this.initConfig(cfg);
+            constructor: function () {
+                this.id = this.self.nextId(); //Step 2
+                console.log(this.id);
             }
         });
 
-        Ext.create("emp");
-
+        Ext.create("MyApp.data.Client");
+        Ext.create("MyApp.data.Client");
+        Ext.create("MyApp.data.Client");
+        console.log("next id is: ",MyApp.data.Client.nextId());
 
 
     </script>

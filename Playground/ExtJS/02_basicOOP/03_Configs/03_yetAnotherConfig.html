@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
+    <script type="text/javascript">
+
+        Ext.define("MyApp.data.Invoice", {
+            config: {  //Step1: defining the "config" pre-processor
+                client: '',
+                tax: 0.083,
+                subtotal: 0, total: 0
+            },
+            constructor: function (config) {
+                var me = this;
+
+                me.initConfig(config); //Step 2: Init config is defined in Ext.Base
+
+            },
+
+            ///using getters and setters
+            applySubtotal: function (value) { //Step 1: We override the applySubtotal method. We can add our custom logic here; in this case we will calculate the new value for the total property.
+                var me = this;
+                me.setTotal(value + value
+                    * me.getTax());//Step 2 : We read the tax property in order to calculate the new total property.
+                return value; // Step 3 : We returned the new value for the subtotal property. If we don't return a value then nothing will be set for the property.
+            }
+
+
+        });
+
+        var invoice = Ext.create("MyApp.data.Invoice", {client: "Tuxtux Inc", subtotal: 100, total: 108.3});
+        console.log(invoice.getClient());
+        console.log(invoice.getSubtotal());
+        console.log(invoice.getTax()); // 0.83
+        console.log(invoice.getTotal());
+        invoice.setTax(0.16);
+        console.log(invoice.getTax()); // 0.16
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -13,20 +13,30 @@
         Ext.define("MyApp.skating.Jump", {
             waltz: function () {
                 console.log("Waltz: a one-half rotation jump that forms the basis for the axel jump.");
-            }, axel: function () {
+            },
+            axel: function () {
                 console.log("Axel: A single axel actually has 1.5 rotations");
-            }, split: function () {
+            },
+            split: function () {
                 console.log("Split: With either a flip, lutz, or loop entry and split or straddle position in the air.");
+            },
+            combination: function () {
+                console.log("This is a combination jump!");
             }
         });
 
         Ext.define("MyApp.skating.Spin", {
             scratch: function () {
                 console.log("Scratch: With the free leg crossed in front of the skating leg.");
-            }, crossfoot: function () {
+            },
+            crossfoot: function () {
                 console.log("Crossfoot: Is a back upright spin in which the free leg is crossed...");
-            }, camel: function () {
+            },
+            camel: function () {
                 console.log("Camel: Is a spin in which the free leg is held backwards with the knee higher than the hip level");
+            },
+            combination: function () {
+                console.log("This is a combination spin!!");
             }
         });
 
@@ -55,15 +65,46 @@
                 me.mohawk();
                 me.camel();
                 me.axel();
+
+                me.mixins.jump.combination();
+                me.mixins.spin.combination();
+
                 me.spreadeagle();
                 me.scratch();
                 console.log(me.name + " ends the program and gets the first place!");
             }
         });
 
+        Ext.define("MyApp.dancing.Skater", {
+            extend: "Ext.util.Observable",
+            mixins: { //Step 1
+                spin: "MyApp.skating.Spin", footwork: "MyApp.stepsequence.Footwork"
+            }, constructor: function (options) {
+                Ext.apply(this, options); //Step 2
+            }, compete: function () { //Step 3
+                var me = this;
+                console.log(me.name + " from " + me.nationality + " starts the program! Let's see how it goes...");
+                me.camel();
+                me.scratch();
+                me.spreadeagle();
+                me.twizzles();
+                me.camel();
+                console.log(me.name + " ends the program but with no good results :(");
+            }
+        });
+
 
         var taky = Ext.create("MyApp.single.Skater", {name: "Taky", nationality: "Japan"});
         taky.compete();
+
+        taky.combination();//Defined in Jump class
+        taky.mixins.spin.combination(); //Defined in Spin class
+        taky.mixins.jump.combination(); //Defined in Jump class
+
+        console.log('\n\n\n');
+
+        var susan = Ext.create("MyApp.dancing.Skater", {name: "Susan", nationality: "USA"});
+        susan.compete();
 
 
     </script>
