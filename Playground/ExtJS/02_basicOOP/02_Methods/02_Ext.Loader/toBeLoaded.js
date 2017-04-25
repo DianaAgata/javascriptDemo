@@ -1,10 +1,9 @@
 Ext.define('toBeLoaded',{
     alias:'toBeLoaded',
-    xtype:'container',
     items:[
         {
-            html:"loaded",
-            renderTo:Ext.getBody()
+            xtype:'panel',
+            html:"loaded"
         }
     ]
 });

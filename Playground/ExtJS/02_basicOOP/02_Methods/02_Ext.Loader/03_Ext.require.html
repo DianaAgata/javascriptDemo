@@ -10,19 +10,16 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all-dev.js"></script>
     <script type="text/javascript">
 
-        Ext.Loader.setConfig({
-            enabled: true, paths: {
-            }
-        });
-
-      Ext.require('toBeLoaded');
+        Ext.require('toBeLoaded');
 
         Ext.onReady(function () {
+
 
             Ext.create('toBeLoaded',{
                 items:[
                     {xtype:'toBeLoaded'}
-                ]
+                ],
+                renderTo:Ext.getBody()
             });
 
         });
