@@ -9,15 +9,18 @@ var init1 = function(event) {
 };
 
 
-
 var init2 = function(event) {
   console.log('DOM2 function');
   console.log(document.getElementById('demo'));
   console.log(document.getElementById('img-1'));
 };
 
-document.addEventListener("DOMContentLoaded", init2);
-document.addEventListener("DOMContentLoaded", init1);
+var completeInit= function(event){
+  init2(event);
+  init1(event);
+}
+
+document.addEventListener("DOMContentLoaded", completeInit);
 
 
 console.log('before loading DOM :',document.getElementById('demo'));
