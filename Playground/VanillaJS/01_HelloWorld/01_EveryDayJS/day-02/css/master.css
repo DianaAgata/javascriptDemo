@@ -1,0 +1,9 @@
+h1{
+  color:blue;
+}
+
+img{
+  width:100px;
+  border-radius: 1rem;
+  border:3px dotted blue;
+}
