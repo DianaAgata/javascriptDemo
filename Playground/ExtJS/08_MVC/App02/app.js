@@ -2,6 +2,7 @@ Ext.Loader.setConfig({
     enabled: true
 });
 
+
 Ext.application({
     name: 'HW', //this defines the namespace
 
@@ -11,14 +12,13 @@ Ext.application({
 
 
     views: [
-       // 'FirstView'
+        // 'FirstView'
     ],
 
 
-    launch: function() {
+    launch: function () {
         Ext.create('HW.view.MainView');//this actually lauches the first view
     }
-
 
 
 });
