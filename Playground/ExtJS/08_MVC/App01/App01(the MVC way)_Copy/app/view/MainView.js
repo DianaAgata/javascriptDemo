@@ -2,6 +2,7 @@ Ext.define('SE.view.MainView', {
     extend: "Ext.container.Viewport",
 
     layout: 'fit', //fit usually has just one item
+
     items: [
         {
             xtype: 'panel',
@@ -39,4 +40,5 @@ Ext.define('SE.view.MainView', {
             ]
         }
     ]
+
 });

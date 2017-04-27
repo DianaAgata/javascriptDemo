@@ -36,4 +36,5 @@ Ext.application({
     launch: function() {
         Ext.create('SE.view.MainView');
     }
+
 });
