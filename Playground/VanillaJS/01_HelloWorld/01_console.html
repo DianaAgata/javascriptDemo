@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="app">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,16 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-<h1 ng-controller="HelloWorldCtrl">{{helloMessage}}</h1>
-
-
-<script type="text/javascript">
-    angular.module('app',[]).controller('HelloWorldCtrl',
-    function($scope){
-        $scope.helloMessage = "Hello World";
-    })
+<script>
+    console.warn("this is console warning");
+    console.trace("this is a console info");
+    console.error("this is a console error message");
+    console.info("this is a console info");
+    console.debug("this is a debug message");
 </script>
 
 </body>
 </html>
-
