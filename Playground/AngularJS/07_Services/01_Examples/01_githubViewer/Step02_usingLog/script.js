@@ -1,7 +1,7 @@
 (function () {
     var app = angular.module('githubViewer', []);
 
-    var MainController = function ($scope, $http) {
+    var MainController = function ($scope, $http, $interval, $log) {
         var userImg;
 
         var onUserComplete = function (response) {
@@ -9,11 +9,11 @@
             console.log('user logo', $scope.user.avatar_url);
             userImgURI = response.data.avatar_url;
 
-            $http.get($scope.user.repos_url).then(onRepos,onError);
+            $http.get($scope.user.repos_url).then(onRepos, onError);
         };
 
         var onRepos = function (response) {
-          $scope.repos=response.data;
+            $scope.repos = response.data;
         };
         var onImageComplete = function (response) {
             $http({
@@ -21,9 +21,9 @@
                 url: userImgURI,
                 responseType: 'arraybuffer'
             }).then(function (response) {
-                console.log(response);
+               // console.log(response);
                 $scope.user.imageSTR = _arrayBufferToBase64(response.data);
-                console.log($scope.user.imageSTR);
+               // console.log($scope.user.imageSTR);
                 // str is base64 encoded.
             }, function (response) {
                 console.error('error in getting static img.');
@@ -41,29 +41,52 @@
             }
         };
 
-        var onComplete = function (response) {
-            onUserComplete(response);
-           onImageComplete(response);
-        };
-
         var onError = function (reason) {
             $scope.error = "Could not fetch the data ";
         };
 
-        $scope.search =  function (username) {
-            $http.get("https://api.github.com/users/" + username).then(onComplete,onError);
+        var onComplete = function (response) {
+            onUserComplete(response);
+            onImageComplete(response);
+
+        };
+
+
+
+        var decrementCountdown = function () {
+            $scope.countdown -= 1;
+            if ($scope.countdown < 1) {
+                $scope.search($scope.username);
+            }
+        };
+
+        var countdownInterval = null;
+        var startCountdown = function () {
+            countdownInterval = $interval(decrementCountdown, 1000, $scope.countdown);
+        };
+
+        $scope.search = function (username) {
+            $log.info("Searching for " + username);
+            $http.get("https://api.github.com/users/" + username).then(onComplete, onError);
+            if (countdownInterval) {
+                $interval.cancel(countdownInterval);
+                $scope.countdown = null;
+            }
+
         };
 
 
 
 
-        $scope.username="angular";
+        $scope.username = "angular";
         $scope.message = "GitHub Viewer";
-        $scope.repoSortOrder='-stargazers_count';
+        $scope.repoSortOrder = '-stargazers_count';
+        $scope.countdown = 10;
+        startCountdown();
 
     };
 
-    app.controller("MainController", ["$scope", "$http", MainController]);
+    app.controller("MainController", ["$scope", "$http", "$interval", "$log", MainController]);
 
 
 })();
