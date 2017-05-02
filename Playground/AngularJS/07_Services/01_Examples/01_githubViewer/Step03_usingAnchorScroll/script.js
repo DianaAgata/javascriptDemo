@@ -1,7 +1,7 @@
 (function () {
     var app = angular.module('githubViewer', []);
 
-    var MainController = function ($scope, $http, $interval, $log) {
+    var MainController = function ($scope, $http, $interval, $log, $anchorScroll, $location) {
         var userImg;
 
         var onUserComplete = function (response) {
@@ -14,7 +14,10 @@
 
         var onRepos = function (response) {
             $scope.repos = response.data;
+            $location.hash("userDetails");
+            $anchorScroll();
         };
+
         var onImageComplete = function (response) {
             $http({
                 method: 'GET',
@@ -93,7 +96,7 @@
 
     };
 
-    app.controller("MainController", ["$scope", "$http", "$interval", "$log", MainController]);
+    app.controller("MainController", ["$scope", "$http", "$interval", "$log", "$anchorScroll", "$location", MainController]);
 
 
 })();
