@@ -13,7 +13,7 @@
         Ext.application({
             name: 'MyApp',
             launch: function(){
-                Ext.create('Ext.container.Viewport',{
+                Ext.create('Ext.container.Viewport',{ //if we put "Container" instead of Viewport, the page will not be responsive anymore
                     items:[
                         {
                             xtype: 'component',
@@ -50,8 +50,9 @@
                             }
                         }
 
-                    ]
-                })
+                    ],
+                    renderTo: Ext.getBody()
+                }).show();
         }
         });
 

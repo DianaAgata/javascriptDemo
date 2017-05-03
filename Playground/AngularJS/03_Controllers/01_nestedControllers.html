@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/
+angularjs/1.5.7/angular.js">
+    </script>
+</head>
+<body>
+
+<div ng-app="myApp">
+
+    <div ng-controller="ParentController">
+
+            <div ng-controller="ChildController">
+
+                     <button ng-click="sayHello()">Say hello</button>
+
+            </div>
+
+             {{ person }}
+        
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+    var app = angular.module('myApp', []);
+
+    app.controller('ParentController', function ($scope) {
+        $scope.person = {greeted: false};
+    });
+
+    app.controller('ChildController', function ($scope) {
+        $scope.sayHello = function () {
+            $scope.person.name = "Florin Asavei";
+            $scope.person.greeted = true;
+        }
+    });
+
+
+</script>
+
+</body>
+</html>
