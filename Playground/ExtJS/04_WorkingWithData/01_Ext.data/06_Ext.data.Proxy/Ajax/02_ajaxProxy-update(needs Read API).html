@@ -12,13 +12,19 @@
 
         Ext.onReady(function () {
 
-            Ext.define("Country",{
-                extend : "Ext.data.Model",
-                fields: ["name","capital"]
+            Ext.define("Country", {
+                extend: "Ext.data.Model",
+                fields: ["name", "capital"]
             });
 
-            var ajaxProxy = Ext.create("Ext.data.proxy.Ajax",{
-                url: "countries.txt",
+
+            var ajaxProxy = Ext.create("Ext.data.proxy.Ajax", {
+                api: {
+                    create: '/countries/add',
+                    read: 'countries.txt',
+                    update: '/countries/update',
+                    destroy: '/countries/remove'
+                },
                 model: "Country",
                 reader: {
                     type: "json",
@@ -28,11 +34,24 @@
 
 
 
-            var updateOperation = Ext.create("Ext.data.Operation",{
-               action: "update"
-           });
 
-            ajaxProxy.update(updateOperation, function(src){
+            var readOperation = Ext.create("Ext.data.Operation",{
+                action: "read"
+            });
+
+
+            ajaxProxy.read(readOperation, function(src){
+                var records = src.getRecords();
+                for(var i=0; i<records.length; i++){
+                    console.log(records[i].get("name"));
+                }
+            });
+
+            var updateOperation = Ext.create("Ext.data.Operation", {
+                action: "update"
+            });
+
+            ajaxProxy.update(updateOperation, function (src) {
                 console.log("***Error***");
                 console.log(src.getError().status);
                 console.log(src.getError().statusText);
