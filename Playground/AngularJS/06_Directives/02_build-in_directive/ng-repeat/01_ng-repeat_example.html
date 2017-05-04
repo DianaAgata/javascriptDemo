@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+</head>
+<body ng-controller="MainController">
+
+<ul>
+    <li ng-repeat="country in countries">
+        {{country.name}} has population of {{country.population}},
+        {{worldsPercentage(country.population)}} % of the World's population
+    </li>
+    <hr>
+    World's population: {{population}} millions
+</ul>
+
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller("MainController", function ($scope) {
+
+        $scope.population = 7000;
+        $scope.countries = [
+            {name: 'France', population: 63.1},
+            {name: 'United Kingdom', population: 61.8},
+            {name: 'Romania', population: 19.8}
+
+        ];
+        $scope.worldsPercentage = function (countryPopulation) {
+            return (countryPopulation / $scope.population)*100;
+        }
+
+    });
+</script>
+
+</body>
+</html>
