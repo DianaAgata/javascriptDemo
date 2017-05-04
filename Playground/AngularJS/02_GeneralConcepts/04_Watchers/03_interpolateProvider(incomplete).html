@@ -1,0 +1,57 @@
+<!doctype html>
+<html data-ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js">
+    </script>
+</head>
+<body>
+
+<div id="emailEditor">
+    <input ng-model="to"
+           type="email"
+           placeholder="Recipient"/>
+    <textarea ng-model="emailBody"></textarea>
+</div>
+<div id="emailPreview">
+    <pre>__ previewText __</pre>
+</div>
+
+<script type="text/javascript">
+
+
+    angular.module('emailParser', [])
+        .config(['$interpolateProvider',
+            function ($interpolateProvider) {
+                $interpolateProvider.startSymbol('__');
+                $interpolateProvider.endSymbol('__');
+            }])
+        .factory('EmailParser', ['$interpolate',
+            function ($interpolate) {
+// a service to handle parsing
+                return {
+                    parse: function (text, context) {
+                        var template = $interpolate(text);
+                        return template(context);
+                    }
+                }
+            }]);
+
+    angular.module('myApp', ['emailParser'])
+        .controller('MyController',
+            ['$scope', 'EmailParser',
+                function ($scope, EmailParser) {
+// Set up a watch
+                    $scope.$watch('emailBody', function (body) {
+                        if (body) {
+                            $scope.previewText =
+                                EmailParser.parse(body, {
+                                    to: $scope.to
+                                });
+                        }
+                    });
+                }]);
+
+</script>
+
+</body>
+</html>

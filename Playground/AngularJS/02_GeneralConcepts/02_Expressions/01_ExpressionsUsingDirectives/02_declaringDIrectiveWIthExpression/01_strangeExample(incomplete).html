@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp">
+
+    <my-directive="someExpression">
+    </my-directive>
+
+    <br>
+
+    <div my-directive="someExpression">
+    </div>
+
+    <br>
+
+    <div class="my-directive:someExpression">
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+    angular.module('myApp', [])
+        .directive('myDirective', function() {
+            return {
+                restrict: 'EACM',
+                replace: true,
+                template: '<a href="http://google.com">Click me to go to Google</a>'
+            }
+        });
+
+
+</script>
+
+
+</body>
+</html>
