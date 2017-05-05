@@ -51,9 +51,17 @@
                        else
                            newNode.set("text","Countries");
                    }
-                },
-                renderTo:Ext.getBody()
+                }
 
+            });
+
+
+
+            Ext.create('Ext.tree.Panel',{
+                title: 'Countries',
+                height:400,
+                store:countryStore,
+                renderTo:Ext.getBody()
             });
 
 
