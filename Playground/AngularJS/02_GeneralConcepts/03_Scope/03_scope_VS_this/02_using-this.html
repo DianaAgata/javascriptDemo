@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="test">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+</head>
+<body data-ng-controller="mainController as main">
+
+<h1>{{main.helloMessage}}</h1>
+
+<script>
+    angular.module('test',[])
+        .controller('mainController',function(){ //we don't need to pass $scoper as a parameter
+           this.helloMessage="hello world!";
+        });
+
+</script>
+
+</body>
+</html>
+
