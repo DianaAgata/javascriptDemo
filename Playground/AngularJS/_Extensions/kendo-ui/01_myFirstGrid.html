@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kendo UI Grid How-to</title>
+    <link rel="stylesheet" type="text/css" href="http://kendo.cdn.telerik.com/2017.1.118/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2017.1.118/styles/kendo.blueopal.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2017.1.118/js/kendo.all.min.js"></script>
+</head>
+<body>
+<h3 style="color:#4f90ea;">Exercise 1 - See What Kendo UI Grids Can
+    Do</h3>
+<p><a href="index.html">Home</a></p>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#myGrid").kendoGrid();
+    });
+</script>
+
+<table id="myGrid">
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Rank</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Jim</td>
+        <td>Kirk</td>
+        <td>Captain</td>
+    </tr>
+    <tr>
+        <td>Jim</td>
+        <td>Raynor</td>
+        <td>Captain</td>
+
+    </tr>
+    <tr>
+        <td>Sarah</td>
+        <td>Kerrigan</td>
+        <td>Ghost Recon</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
