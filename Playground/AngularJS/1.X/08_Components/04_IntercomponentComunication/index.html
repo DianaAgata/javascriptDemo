@@ -1,0 +1,24 @@
+<!doctype html>
+<html data-ng-app="docsTabsExample">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+</head>
+<body>
+
+<my-tabs>
+    <my-pane title="Hello">
+        <h4>Hello</h4>
+        <p>Lorem ipsum dolor sit amet</p>
+    </my-pane>
+    <my-pane title="World">
+        <h4>World</h4>
+        <em>Mauris elementum elementum enim at suscipit.</em>
+        <p><a href ng-click="i = i + 1">counter: {{i || 0}}</a></p>
+    </my-pane>
+</my-tabs>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>

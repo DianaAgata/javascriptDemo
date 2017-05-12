@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.default.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.2.714/js/kendo.all.min.js"></script>
+</head>
+<body>
+
+<div id="example">
+    <table id="grid">
+        <colgroup>
+            <col />
+            <col />
+            <col style="width:110px" />
+            <col style="width:120px" />
+            <col style="width:130px" />
+        </colgroup>
+        <thead>
+        <tr>
+            <th data-field="make">Car Make</th>
+            <th data-field="model">Car Model</th>
+            <th data-field="year">Year</th>
+            <th data-field="category">Category</th>
+            <th data-field="airconditioner">Air Conditioner</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Volvo</td>
+            <td>S60</td>
+            <td>2010</td>
+            <td>Saloon</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Audi</td>
+            <td>A4</td>
+            <td>2002</td>
+            <td>Saloon</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Toyota</td>
+            <td>Avensis</td>
+            <td>2006</td>
+            <td>Saloon</td>
+            <td>No</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $("#grid").kendoGrid({
+                height: 550,
+                sortable: true
+            });
+        });
+    </script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.2.714/styles/kendo.default.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.2.714/js/kendo.all.min.js"></script>
+</head>
+<body>
+<div id="grid">
+</div>
+<script>
+
+    var products = [{
+        ProductID: 11,
+        ProductName: "Chai",
+    }, {
+        ProductID: 22,
+        ProductName: "Chang",
+    }, {
+        ProductID: 33,
+        ProductName: "Aniseed Syrup",
+    }, {
+        ProductID: 43,
+        ProductName: "With tunas drink red wine. ",
+    },{
+        ProductID: 65,
+        ProductName: "With melons drink kefir. ",
+    },{
+        ProductID: 54,
+        ProductName: "Est fortis epos, cesaris.",
+    }, {
+        ProductID: 43,
+        ProductName: "Usus primus olla est.",
+    },{
+        ProductID: 65,
+        ProductName: "Magical zens visualizes most awarenesses. ",
+    },{
+        ProductID: 32,
+        ProductName: "Est regius imber, cesaris. ",
+    },{
+        ProductID: 54,
+        ProductName: "Cottas sunt resistentias de velox heuretes?",
+    },{
+        ProductID: 65,
+        ProductName: "Chef Anton's Cajun Seasoning",
+    },{
+        ProductID: 43,
+        ProductName: "Fluctui, adelphis, et planeta. ",
+    },{
+        ProductID: 43,
+        ProductName: "Classis pius tus est. ",
+    }, {
+        ProductID: 55,
+        ProductName: "Chef Anton's Gumbo Mix",
+    }];
+
+    $(document).ready(function () {
+        $("#grid").kendoGrid({
+            dataSource: {
+                data: products,
+                schema: {
+                    model: {
+                        id: "ProductID",
+                        fields: {
+                            ProductName: {
+                                type: "string"
+                            }
+                        },
+                    }
+                },
+                pageSize: 10
+            },
+            sortable: true,
+            filterable: true,
+            pageable: true,
+            columns: [
+                { field: "ProductID", title: "ProductID" },
+                { field: "ProductName", title: "ProductName" },
+                { command: ["edit", "destroy"], title: "&nbsp;" }
+            ],
+            editable: "inline"
+        });
+    });
+</script>
+</body>
+</html>

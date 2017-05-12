@@ -7,15 +7,18 @@
 <body>
 
 
+<hello-world name="John"></hello-world>
+
+
 <script type="text/javascript">
 
-    angular.module('myApp', [])
-        .component('helloWorld', {
-            template: '<span>Hello World!</span>'
+    angular.module("app", [])
+        .component("helloWorld", {
+            template: '<span>Hello {{$ctrl.name}}!</span>',
+            bindings: {name: '@'}
         });
 
 </script>
-
 
 
 </body>

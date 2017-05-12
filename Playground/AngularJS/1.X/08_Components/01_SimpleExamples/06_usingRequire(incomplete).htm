@@ -1,0 +1,39 @@
+<!doctype html>
+<html data-ng-app="app">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js">
+    </script>
+</head>
+<body>
+
+<hello-parent myName="Mike">
+    <hello-world name="John"></hello-world>
+</hello-parent>
+
+
+
+<script type="text/javascript">
+
+    angular.module("app", [])
+        .component("helloWorld",{
+            template: "Hello {{$ctrl.name}}, I'm {{$ctrl.myName}}!",
+            bindings: { name: '@' },
+            require: {
+                parent: 'helloParent'
+            },
+            controller: function () {
+                // here this.parent might not be initiated yet
+
+                this.$onInit = function() {
+                    // after $onInit, use this.parent to access required controller
+                    this.parent.foo();
+                }
+
+            }
+        });
+
+</script>
+
+
+</body>
+</html>
