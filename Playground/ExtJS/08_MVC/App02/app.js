@@ -10,7 +10,6 @@ Ext.application({
         'HW.view.MainView'
     ],
 
-
     views: [
         // 'FirstView'
     ],
