@@ -1,0 +1,16 @@
+#left, #right{
+  width:50%;
+  float:left;
+  border:2px solid black;
+  box-sizing: border-box;
+  padding:2rem 0;
+}
+
+img{
+  width:50%;
+  margin:0 25%;
+}
+
+#wrapper{
+  text-align: center;
+}

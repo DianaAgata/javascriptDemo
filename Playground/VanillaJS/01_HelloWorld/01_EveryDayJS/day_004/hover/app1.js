@@ -6,4 +6,4 @@ var increment = function() {
   clickDisplay.innerHTML = clicks++;
 }
 
-clickListener.addEventListener("click", increment);
+clickListener.addEventListener("mouseover", increment);

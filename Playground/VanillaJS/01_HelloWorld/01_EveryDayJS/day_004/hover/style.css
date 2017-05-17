@@ -1,0 +1,8 @@
+#p1{
+  font-weight: bold;
+  color:blue;
+}
+
+#p1:hover{
+  color:red;
+}
