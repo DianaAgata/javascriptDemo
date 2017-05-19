@@ -15,6 +15,7 @@
         var onRepos = function (response) {
           $scope.repos=response.data;
         };
+
         var onImageComplete = function (response) {
             $http({
                 method: 'GET',
