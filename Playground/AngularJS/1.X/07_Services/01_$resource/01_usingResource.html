@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular-resource.js"></script>
+</head>
+<body ng-controller="ResourceController">
+
+
+<script>
+    angular.module('app', ['ngResource']);
+
+    angular.module('app').controller('ResourceController', function ($scope, Entry) {
+
+        var User = $resource('userId.json',
+            {
+                userId: '@id'
+            }
+        );
+
+        // Issues a request to:
+        // GET /api/users
+        User.get(function (resp) {
+            console.log('success: ', resp);
+            // Handle successful response here
+        }, function (err) {
+            // Handle error here
+            console.log('error: ', err);
+        });
+    });
+
+</script>
+</body>
+</html>
