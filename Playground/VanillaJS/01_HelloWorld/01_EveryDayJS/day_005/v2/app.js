@@ -8,24 +8,25 @@ var leftImage = document.getElementById("left-image");
 var rightImage = document.getElementById("right-image");
 
 var leftIncrement = function() {
-  leftDisplay.innerHTML = leftClicks++;
-  if (leftClicks > rightClicks) {
-    leftImage.src = "img/happy.png";
-    rightImage.src = "img/sad.png";
-  } else {
-    leftImage.src = "img/sad.png";
-    rightImage.src = "img/happy.png";
-  }
+  leftDisplay.innerHTML = ++leftClicks;
+  compareClicks();
 }
 
 var rightIncrement = function() {
-  rightDisplay.innerHTML = rightClicks++;
+  rightDisplay.innerHTML = ++rightClicks;
+  compareClicks();
+}
+
+function compareClicks(){
   if (rightClicks > leftClicks) {
     rightImage.src = "img/happy.png";
     leftImage.src = "img/sad.png";
+  } else if (leftClicks === rightClicks) {
+    leftImage.src = "img/sad.png";
+    rightImage.src = "img/sad.png";
   } else {
     rightImage.src = "img/sad.png";
-    leftImage.src="img/happy.png";
+    leftImage.src = "img/happy.png";
   }
 }
 
