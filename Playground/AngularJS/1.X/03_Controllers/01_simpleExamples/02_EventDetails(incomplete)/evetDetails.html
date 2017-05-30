@@ -1,16 +1,18 @@
-<!doctype html ng-app="eventsApp">
-<html>
+<!doctype html>
+<html ng-app="eventsApp">
 <head>
 </head>
 <body>
 
 <div ng-controller="EventController">
-
+    {{ event.name }} <br>
+    {{ event.date }} <br>
+    {{ event.time }}
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
-<script src="controllers/eventController.js"></script>
 <script src="app.js"></script>
+<script src="controllers/eventController.js"></script>
 
 </body>
 </html>
