@@ -1,0 +1,27 @@
+<!doctype html>
+<html data-ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js">
+    </script>
+</head>
+<body>
+
+
+<my-directive></my-directive>
+
+
+<script type="text/javascript">
+
+    'use strict';
+    angular.module('myApp.directives', []).directive('helloWorld', function () {
+        return {
+            restrict: 'AE',
+            scope: {name: "=name"},
+            template: "<h1>Hello {{ name.first }} {{ name.last }}!</h1>" + "<input data-ng-model='name.first'></input>" + "<input data-ng-model='name.last'></input>"
+        }
+    });
+
+</script>
+
+</body>
+</html>
