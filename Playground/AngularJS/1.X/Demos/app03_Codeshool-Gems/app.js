@@ -11,19 +11,25 @@
     name: 'Awesomeness',
     price: 25,
     description: 'this is awesome',
-    isSoldOut :false,
+    isSoldOut: false,
     canPuchse: true
   }, {
     name: 'Cool',
     price: 35,
     description: 'this is cool',
-    isSoldOut :false,
+    isSoldOut: false,
     canPuchse: true
   }, {
     name: 'Sweet',
     price: 30,
     description: 'this is sweet',
-    isSoldOut : true,
+    isSoldOut: true,
+    canPuchse: true
+  }, {
+    name: 'Meh',
+    price: 20,
+    description: 'this is meh',
+    isSoldOut: true,
     canPuchse: true
   }];
 
