@@ -12,11 +12,12 @@
   {{"hello " + "you"}}
 
   <div ng-controller="StoreController as store">
-    <div ng-hide="product.isSoldOut" ng-repeat="product in store.products">
+    <div ng-hide="product.isSoldOut" ng-repeat="product in store.products | orderBy:'-price'">
       <div>
         <h1>{{product.name}}</h1>
-        <h2>{{product.price}}</h2>
+        <h2>{{product.price | currency}}</h2>
         <p>{{product.description}}</p>
+        <img ng-src="{{product.image}}">
         <div ng-show="product.canPurchase">Buy</div>
       </div>
     </div>
