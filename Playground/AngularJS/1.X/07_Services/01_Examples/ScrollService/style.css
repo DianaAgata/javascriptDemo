@@ -1,0 +1,27 @@
+#showcase{
+    width:60%;
+    float:left;
+    height:50%;
+    background-color: #2aabd2;
+}
+
+#controls{
+    width:40%;
+    float:right;
+    background-color: #00ed61;
+}
+
+ul{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+
+li{
+    padding:10px;
+}
+
+#row-container li{
+    padding: 50px;
+    border:2px dotted black;
+}

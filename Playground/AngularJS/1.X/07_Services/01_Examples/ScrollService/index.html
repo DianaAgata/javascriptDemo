@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="MainController">
+
+<div id="showcase">
+    <div id="outer">
+        <div id="inner">
+            <ul id="row-container">
+                <li class="row"></li>
+                <li class="row"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="controls">
+    <ul>
+        <li>
+            <button ng-click="addRow()">Add Row</button>
+        </li>
+
+        <li>
+            <button>Remove Row</button>
+        </li>
+
+        <li>
+            <button>Scroll to Bottom</button>
+        </li>
+
+    </ul>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
