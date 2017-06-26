@@ -14,8 +14,7 @@
     <div id="outer">
         <div id="inner">
             <ul id="row-container">
-                <li class="row"></li>
-                <li class="row"></li>
+                <li class="row" ng-repeat="item in items track by $index"></li>
             </ul>
         </div>
     </div>

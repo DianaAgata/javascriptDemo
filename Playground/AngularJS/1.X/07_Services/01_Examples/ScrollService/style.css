@@ -3,6 +3,7 @@
     float:left;
     height:50%;
     background-color: #2aabd2;
+    position: fixed;
 }
 
 #controls{

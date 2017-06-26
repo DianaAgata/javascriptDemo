@@ -5,9 +5,12 @@
     angular.module('myApp', [])
         .controller("MainController", ["$scope", "$timeout", "scrollService", function($scope, $timeout, scrollService) {
 
-        $scope.addRow =  function (){
-            console.log('new row');
-        };
+            $scope.items = ["blob","blob","blob"];
+
+            $scope.addRow =  function (){
+                console.log('new row');
+                $scope.items.push("blob");
+            };
     }
     ]);
 
