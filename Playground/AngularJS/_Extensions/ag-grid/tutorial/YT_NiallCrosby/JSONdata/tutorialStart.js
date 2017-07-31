@@ -17,12 +17,19 @@
 
         new agGrid.Grid(gridDiv, gridOptions);
 
+        function myRowScrolledHandler(event) {
+            console.log('scrolled...' + event.direction);
+            console.log('event', event);
+        }
+
+        gridOptions.api.addEventListener('bodyScroll', myRowScrolledHandler);
+
         jsonLoad(function (data) {
             gridOptions.api.setRowData(data);
             console.log('got data', data);
         });
 
-        console.log('gridDiv = ', gridDiv);
+
     });
 
 })();
