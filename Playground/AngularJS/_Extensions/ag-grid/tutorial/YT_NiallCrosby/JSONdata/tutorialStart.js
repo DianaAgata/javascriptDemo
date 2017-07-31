@@ -9,7 +9,8 @@
         var gridOptions = {
             columnDefs: [
                 {headerName: 'Country', field: 'Country'},
-                {headerName: 'City', field: 'City'}
+                {headerName: 'City', field: 'City'},
+                {headerName: 'Budget', field: 'budget'}
 
             ]
         };
