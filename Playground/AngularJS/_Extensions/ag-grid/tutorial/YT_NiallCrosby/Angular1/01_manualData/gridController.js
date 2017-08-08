@@ -2,4 +2,8 @@
 
 (function () {
 
+    angular
+        .module('gridApp')
+        .controller();
+
 })();
