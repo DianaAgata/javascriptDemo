@@ -1,3 +1,4 @@
+const Path = require('path');
 const config ={
     entry:{
         app:['babel-polyfill','./client/js/app']
@@ -7,7 +8,14 @@ const config ={
         filename: '[name]-bundle.js'
     },
     devtool: 'source-map',
-    module: {},
+    module: {
+        loaders: {
+            test: /\.js$/,
+            include :[
+                Path.resolve(process.cwd())
+            ]
+        }
+    },
     resolve :{
         extension : ['', '.js'],
         modulesDirectories: ['node_modules']
