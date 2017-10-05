@@ -16,6 +16,7 @@ let winIcecream = function (message) {
     });
 };
 
+//sequential
 cleanRoom().then(function (result) {
     return removeGarbage(result);
 }).then(function (result) {
@@ -23,6 +24,18 @@ cleanRoom().then(function (result) {
 }).then(function (result) {
     console.log('Finished! ' + result);
 });
+
+// //Parallel
+// Promise.all([cleanRoom(),removeGarbage(),winIcecream()]).then(function(){
+//     console.log('all finished!');
+// });
+
+// //Any of them finished
+// Promise.race([cleanRoom(),removeGarbage(),winIcecream()]).then(function(){
+//     console.log('One of them is finished');
+// });
+
+
 
 
 /*
