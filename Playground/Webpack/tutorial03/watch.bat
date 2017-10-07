@@ -1,1 +1,1 @@
-webpack app.js boundle.js --watch
+npm run watch
