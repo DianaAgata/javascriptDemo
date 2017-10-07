@@ -26,7 +26,7 @@ Vue.config.productionTip = false
 const messages = translations
 
 const i18n = new VueI18n({
-  locale: 'ro', // set locale
+  locale: 'en', // set locale
   messages // set locale messages
 })
 

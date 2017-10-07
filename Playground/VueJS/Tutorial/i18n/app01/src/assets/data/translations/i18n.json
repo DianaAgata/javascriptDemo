@@ -1,12 +1,14 @@
 {
   "en": {
     "message": {
-      "hello": "hello world"
+      "hello": "hello world",
+      "welcome" : "Welcome!"
     }
   },
   "ro": {
     "message": {
-      "hello": "Salut!"
+      "hello": "Salut!",
+      "welcome" : "Bun Venit!"
     }
   }
 }
