@@ -9,13 +9,16 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="vue-app">
-        <h1>Name: {{ name }}</h1>
-        <p>Job: {{ job }}</p>
-        <h2>{{ greet('afternoon') }}</h2>
+<div id="vue-app">
+    <h1>Name: {{ name }}</h1>
+    <p>Job: {{ job }}</p>
+    <h2>{{ greet('afternoon') }}</h2>
+    <a v-bind:href="website">Net Ninja</a>
+    <br>
+    <p v-html="websiteTag"></p>
+    <input type="text" v-bind:value="name">
 
-    </div>
-
+</div>
 <script src="http://unpkg.com/vue"></script>
 <script src="app.js"></script>
 </body>
