@@ -7,19 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="style.css" rel="stylesheet">
+    <script src="http://unpkg.com/vue"></script>
 </head>
 <body>
 <div id="vue-app">
-    <h1>Name: {{ name }}</h1>
-    <p>Job: {{ job }}</p>
-    <h2>{{ greet('afternoon') }}</h2>
-    <a v-bind:href="website">Net Ninja</a>
-    <br>
-    <p v-html="websiteTag"></p>
-    <input type="text" v-bind:value="name">
-
+    <h1>Events</h1>
+    <button v-on:click="age++">Add an Year</button>
+    <button  v-on:click="age--">Substract an Year</button>
+    <p>My age is : {{age}}</p>
 </div>
-<script src="http://unpkg.com/vue"></script>
 <script src="app.js"></script>
 </body>
 </html>
