@@ -2,15 +2,19 @@
 <html>
 
 <head>
- <link rel="stylesheet" href="index.bundle.css">
+  <link rel="stylesheet" href="index.bundle.css">
+  <script src="index.bundle.js" charset="utf-8"></script>
 </head>
 
 <body>
-  <div class="mermaid">
-graph LR
-A-->B
-  </div>
-  <script src="index.bundle.js" charset="utf-8"></script>
+<div class="mermaid">
+  graph LR
+  A[Begin] -- Do some stuff --> B((Some Step))
+  A --> C(Some Other Step)
+  B --> D{Final Step}
+  C --> D
+</div>
+
 </body>
 
 </html>
