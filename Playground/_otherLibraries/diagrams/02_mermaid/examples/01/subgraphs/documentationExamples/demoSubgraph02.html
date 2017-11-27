@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../../_vendor/mermaid/themes/mermaid.default.css">
+    <script src="../../../../_vendor/mermaid/mermaid.min.js"></script>
+</head>
+<body>
+
+<div class="mermaid">
+    graph TB
+    c1-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end
+</div>
+
+<script>
+    mermaid.initialize({startOnLoad: true, theme: 'forest'});
+</script>
+
+</body>
+</html>
