@@ -33,4 +33,8 @@ fetch('data.json', {mode: 'no-cors'})
 
       elements: data
     });
+    //set zoom limitations
+      cy.minZoom( 0.5 );
+      cy.maxZoom( 1.5 );
+
   });
