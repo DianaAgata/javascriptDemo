@@ -62,7 +62,7 @@ var highlightNextEle = function(){
     bfs.path[i].addClass('highlighted');
 
     i++;
-    setTimeout(highlightNextEle, 1000);
+    setTimeout(highlightNextEle, 100);
   }
 };
 
