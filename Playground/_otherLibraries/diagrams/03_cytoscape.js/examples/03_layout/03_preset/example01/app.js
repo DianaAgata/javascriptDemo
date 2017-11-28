@@ -6,8 +6,8 @@ var cy = cytoscape({
             data:
                 {id: 'a'},
             position: {
-                x: 100,
-                y: 100
+                x: 0,
+                y: 0
             }
         },
         {
@@ -15,38 +15,81 @@ var cy = cytoscape({
                 {id: 'b'},
             position: {
                 x: 100,
-                y: 200
+                y: 0
             }
         },
         {
             data:
                 {id: 'c'},
             position: {
-                x: 200,
-                y: 100
+                x: 100,
+                y: -100
             }
         },
         {
             data: {id: 'd'},
             position: {
-                x: 200,
-                y: 200
+                x: 100,
+                y: -200
             }
         },
         {
             data: {id: 'e'},
             position: {
                 x: 100,
-                y: 300
+                y: 100
             }
         },
         {
             data: {id: 'f'},
             position: {
-                x: 200,
-                y: 300
+                x: 100,
+                y: 200
             }
         },
+        {
+            data: {id: 'g'},
+            position: {
+                x: 200,
+                y: 0
+            }
+        },
+        {
+            data: {id: 'h'},
+            position: {
+                x: 300,
+                y: -75
+            }
+        },
+        {
+            data: {id: 'i'},
+            position: {
+                x: 300,
+                y: 75
+            }
+        },
+        {
+            data: {id: 'j'},
+            position: {
+                x: 400,
+                y: -150
+            }
+        },
+        {
+            data: {id: 'k'},
+            position: {
+                x: 400,
+                y: 0
+            }
+        },
+        {
+            data: {id: 'l'},
+            position: {
+                x: 400,
+                y: 150
+            }
+        },
+
         // edges
         {
             data: {
@@ -69,13 +112,7 @@ var cy = cytoscape({
                 target: 'f'
             }
         },
-        {
-            data: {
-                id: 'ac',
-                source: 'a',
-                target: 'c'
-            }
-        },
+
         {
             data: {
                 id: 'be',
