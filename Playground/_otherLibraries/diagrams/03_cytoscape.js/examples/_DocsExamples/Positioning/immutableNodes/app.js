@@ -26,23 +26,29 @@ var cy = cytoscape({
 
             selected: false, // whether the element is selected (default false)
 
-            selectable: true, // whether the selection state is mutable (default true)
+            selectable: false, // whether the selection state is mutable (default true)
 
-            locked: false, // when locked a node's position is immutable (default false)
+            locked: true, // when locked a node's position is immutable (default false)
 
-            grabbable: true, // whether the node can be grabbed and moved by the user
+            grabbable: false, // whether the node can be grabbed and moved by the user
 
             classes: 'foo bar' // a space separated list of class names that the element has
         },
 
         { // node n2
             data: { id: 'n2' },
-            renderedPosition: { x: 200, y: 200 } // can alternatively specify position in rendered on-screen pixels
+            renderedPosition: { x: 200, y: 200 }, // can alternatively specify position in rendered on-screen pixels
+            selectable: false,
+            locked: true,
+            grabbable: false
         },
 
         { // node n3
             data: { id: 'n3', parent: 'nparent' },
-            position: { x: 123, y: 234 }
+            position: { x: 123, y: 234 },
+            selectable: false,
+            locked: true,
+            grabbable: false
         },
 
         { // node nparent
