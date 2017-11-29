@@ -46,7 +46,10 @@ var cy = window.cy = cytoscape({
         nodes: [
             {
                 data:
-                    {id: 'a', parent: 'b'},
+                    {
+                        id: 'a',
+                        parent: 'b'
+                    },
                 position: {
                     x: 215,
                     y: 85
@@ -58,7 +61,10 @@ var cy = window.cy = cytoscape({
             },
             {
                 data:
-                    {id: 'c', parent: 'b'},
+                    {
+                        id: 'c',
+                        parent: 'b'
+                    },
                 position: {
                     x: 300,
                     y: 85
