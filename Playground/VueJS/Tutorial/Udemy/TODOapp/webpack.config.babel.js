@@ -37,6 +37,6 @@ export default {
 
     ],
     devServer: {
-        inline: true
+        inline: true,
     }
 }
