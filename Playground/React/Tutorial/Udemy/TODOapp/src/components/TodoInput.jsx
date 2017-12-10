@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => ({
     handleSubmitInput(e) {
         e.preventDefault();
         let input = e.target.elements[0];
-        let todo = {id: guid.raw, text: input.value, done: false};
+        let todo = {id: guid.raw(), text: input.value, done: false};
         dispatch({type: "SUBMIT_TODO", todo});
         input.value = "";
     }
