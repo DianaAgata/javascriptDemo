@@ -1,0 +1,145 @@
+{
+  "type": "success",
+  "value": [
+    {
+      "id": 466,
+      "joke": "Chuck Norris doesn't do Burn Down charts, he does Smack Down charts.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 472,
+      "joke": "When Chuck Norris is web surfing websites get the message &quot;Warning: Internet Explorer has deemed this user to be malicious or dangerous. Proceed?&quot;.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 487,
+      "joke": "No statement can catch the ChuckNorrisException.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 526,
+      "joke": "No one has ever pair-programmed with Chuck Norris and lived to tell about it.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 498,
+      "joke": "Chuck Norris hosting is 101% uptime guaranteed.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 479,
+      "joke": "Chuck Norris does not need to know about class factory pattern. He can instantiate interfaces.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 539,
+      "joke": "Chuck Norris's database has only one table, 'Kick', which he DROPs frequently.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 453,
+      "joke": "Chuck Norris doesn't need garbage collection because he doesn't call .Dispose(), he calls .DropKick().",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 471,
+      "joke": "Chuck Norris's keyboard doesn't have a Ctrl key because nothing controls Chuck Norris.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 467,
+      "joke": "Chuck Norris can delete the Recycling Bin.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 460,
+      "joke": "The only pattern Chuck Norris knows is God Object.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 534,
+      "joke": "Chuck Norris is the ultimate mutex, all threads fear him.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 481,
+      "joke": "For Chuck Norris, NP-Hard = O(1).",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 520,
+      "joke": "With Chuck Norris P = NP. There's no nondeterminism with Chuck Norris decisions.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 478,
+      "joke": "Chuck Norris can instantiate an abstract class.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 552,
+      "joke": "Chuck Norris knows the value of NULL, and he can sort by it too.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 515,
+      "joke": "Chuck Norris compresses his files by doing a flying round house kick to the hard drive.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 538,
+      "joke": "Chuck Norris's log statements are always at the FATAL level.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 477,
+      "joke": "Chuck Norris can access private methods.",
+      "categories": [
+        "nerdy"
+      ]
+    },
+    {
+      "id": 26,
+      "joke": "Chuck Norris is the only human being to display the Heisenberg uncertainty principle - you can never know both exactly where and how quickly he will roundhouse-kick you in the face. ",
+      "categories": [
+        "nerdy"
+      ]
+    }
+  ]
+}
