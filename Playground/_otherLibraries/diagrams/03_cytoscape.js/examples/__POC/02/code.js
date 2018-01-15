@@ -1,3 +1,227 @@
+var serverData = [
+    {
+        level: 0,
+        label: "Mike_0"
+    },
+    {
+        level: 1,
+        "label": "Joe_0"
+    },
+    {
+        level: 1,
+        "label": "Joe_1"
+    },
+    {
+        level: 1,
+        "label": "Joe_2"
+    },
+    {
+        level: 1,
+        "label": "Joe_3"
+    },
+    {
+        level: 1,
+        "label": "Joe_4"
+    },
+    {
+        level: 2,
+        "label": "Lucy_0"
+    },
+    {
+        level: 3,
+        "label": "Mike_0"
+    },
+    {
+        level: 3,
+        "label": "Mike_1"
+    },
+    {
+        level: 4,
+        "label": "Julie_0"
+    },
+    {
+        level: 4,
+        "label": "Julie_1"
+    },
+    {
+        level: 4,
+        "label": "Julie_2"
+    }
+
+];
+
+var nodes = [
+    {
+        data:
+            {
+                id: 'lvl0'
+
+            }
+    },
+    {
+        data:
+            {
+                id: 'lvl0_pos0',
+                parent: 'lvl0'
+            },
+        position: {
+            x: 0,
+            y: 0
+        }
+    },
+    {
+        data:
+            {
+                id: 'lvl1'
+            }
+    },
+    {
+        data:
+            {
+                id: 'lvl1-pos0',
+                parent: 'lvl1'
+            },
+        position: {
+            x: 100,
+            y: 0
+        }
+    },
+    {
+        data:
+            {
+                id: 'lvl1-pos1',
+                parent: 'lvl1'
+            },
+        position: {
+            x: 100,
+            y: 0
+        }
+    },
+    {
+        data:
+            {
+                id: 'lvl1-pos2',
+                parent: 'lvl1'
+            },
+        position: {
+            x: 100,
+            y: 0
+        }
+    },
+    {
+        data:
+            {
+                id: 'lvl1-pos3',
+                parent: 'lvl1'
+            },
+        position: {
+            x: 100,
+            y: 0
+        }
+    },
+    {
+        data:
+            {
+                id: 'lvl1-pos4',
+                parent: 'lvl1'
+            },
+        position: {
+            x: 100,
+            y: 0
+        }
+    },
+    {
+        data:
+            {
+                id: 'lvl2'
+
+            }
+    },
+    {
+        data:
+            {
+                id: 'lvl2_pos0',
+                parent: 'lvl2'
+            },
+        position: {
+            x: 200,
+            y: 0
+        }
+    },
+    {
+        data:
+            {
+                id: 'lvl3'
+            }
+    },
+    {
+        data:
+            {
+                id: 'lvl3_pos0',
+                parent: 'lvl3'
+
+            },
+        position: {
+            x: 300,
+            y: 0
+        }
+    },
+    {
+        data:
+            {
+                id: 'lvl3_pos1',
+                parent: 'lvl3'
+
+            },
+        position: {
+            x: 300,
+            y: 0
+        }
+    },
+    {
+        data:
+            {
+                id: 'lvl4'
+            }
+    },
+    {
+        data:
+            {
+                id: 'lvl4-pos0',
+                parent: 'lvl4'
+
+            },
+        position: {
+            x: 400,
+            y: 0
+        }
+    },
+    {
+        data:
+            {
+                id: 'lvl4-pos1',
+                parent: 'lvl4'
+
+            },
+        position: {
+            x: 400,
+            y: 0
+        }
+    }, {
+        data:
+            {
+                id: 'lvl4-pos2',
+                parent: 'lvl4'
+
+            },
+        position: {
+            x: 400,
+            y: 0
+        }
+    }
+
+];
+
 var cy = window.cy = cytoscape({
     container: document.getElementById('cy'),
 
@@ -42,195 +266,40 @@ var cy = window.cy = cytoscape({
         }
     ],
 
+
     elements: {
-        nodes: [
-            {
-                data:
-                    {
-                        id: 'a'
-
-                    },
-                position: {
-                    x: 0,
-                    y: 0
-                }
-            },
-            {
-                data:
-                    {
-                        id: 'b'
-                    }
-            },
-            {
-                data:
-                    {
-                        id: 'c',
-                        parent: 'b'
-                    },
-                position: {
-                    x: 100,
-                    y: -100
-                }
-            },
-            {
-                data:
-                    {
-                        id: 'd',
-                        parent: 'b'
-                    },
-                position: {
-                    x: 100,
-                    y: -50
-                }
-            },
-            {
-                data:
-                    {
-                        id: 'e',
-                        parent: 'b'
-                    },
-                position: {
-                    x: 100,
-                    y: 0
-                }
-            },
-            {
-                data:
-                    {
-                        id: 'f',
-                        parent: 'b'
-                    },
-                position: {
-                    x: 100,
-                    y: 50
-                }
-            },
-            {
-                data:
-                    {
-                        id: 'g',
-                        parent: 'b'
-                    },
-                position: {
-                    x: 100,
-                    y: 100
-                }
-            },
-            {
-                data:
-                    {
-                        id: 'h'
-
-                    },
-                position: {
-                    x: 200,
-                    y: 0
-                }
-            },
-            {
-                data:
-                    {
-                        id: 'i'
-                    }
-            },
-            {
-                data:
-                    {
-                        id: 'j',
-                        parent: 'i'
-
-                    },
-                position: {
-                    x: 300,
-                    y: -50
-                }
-            },
-            {
-                data:
-                    {
-                        id: 'k',
-                        parent: 'i'
-
-                    },
-                position: {
-                    x: 300,
-                    y: 50
-                }
-            },
-            {
-                data:
-                    {
-                        id: 'l'
-                    }
-            },
-            {
-                data:
-                    {
-                        id: 'm',
-                        parent: 'l'
-
-                    },
-                position: {
-                    x: 400,
-                    y: -50
-                }
-            },
-            {
-                data:
-                    {
-                        id: 'n',
-                        parent: 'l'
-
-                    },
-                position: {
-                    x: 400,
-                    y: 0
-                }
-            }, {
-                data:
-                    {
-                        id: 'o',
-                        parent: 'l'
-
-                    },
-                position: {
-                    x: 400,
-                    y: 50
-                }
-            }
-
-        ],
+        nodes: nodes,
         edges: [
             {
                 data:
                     {
-                        id: 'ab',
-                        source: 'a',
-                        target: 'b'
+                        id: 'lvl0-lvl1',
+                        source: 'lvl0',
+                        target: 'lvl1'
                     }
             },
             {
                 data:
                     {
-                        id: 'bh',
-                        source: 'b',
-                        target: 'h'
+                        id: 'lvl1-lvl2',
+                        source: 'lvl1',
+                        target: 'lvl2'
                     }
             },
             {
                 data:
                     {
-                        id: 'hi',
-                        source: 'h',
-                        target: 'i'
+                        id: 'lvl2-lvl3',
+                        source: 'lvl2',
+                        target: 'lvl3'
                     }
             },
             {
                 data:
                     {
-                        id: 'il',
-                        source: 'i',
-                        target: 'l'
+                        id: 'lvl3-lvl4',
+                        source: 'lvl3',
+                        target: 'lvl4'
                     }
             }
 
