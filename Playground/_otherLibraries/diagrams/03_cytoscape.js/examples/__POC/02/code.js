@@ -50,14 +50,17 @@ var serverData = [
 
 ];
 
+
 var serverNodes = [];
 var severNodesLevels = [];
 var nodesPerCategory = {};
+var levelsArray = [];
 
 //counting levels
 for (var i = 0; i < serverData.length; i++) {
     if (severNodesLevels.indexOf(serverData[i].level) === -1) {
         severNodesLevels.push(serverData[i].level);
+        levelsArray.push('lvl' + serverData[i].level);
     }
 }
 
@@ -74,6 +77,7 @@ for (i = 0; i < severNodesLevels.length; i++) {
     );
 
     nodesPerCategory["lvl" + i] = 0;
+
     for (var j = 0; j < serverData.length; j++) {
         if (serverData[j].level === severNodesLevels[i]) {
             nodesPerCategory["lvl" + i] += 1;
@@ -81,8 +85,19 @@ for (i = 0; i < severNodesLevels.length; i++) {
     }
 }
 
+var serverEdges = [];
 
-console.log('nodesPerCategory', nodesPerCategory);
+for (i = 0; i < levelsArray.length - 1; i++) {
+    serverEdges.push({
+        data: {
+            id: levelsArray[i] + "-" + levelsArray[i + 1],
+            source: levelsArray[i],
+            target: levelsArray[i + 1]
+        }
+    })
+    ;
+}
+
 
 var iterator = 0;
 var currentLevel = "lvl0";
@@ -99,18 +114,18 @@ function generateYPosition(level) {
 
     if (numberOfNodes % 2 === 0) {
         if (iterator % 2 === 0) {
-            yPosition = (iterator+1) * 40;
+            yPosition = (iterator + 1) * 50;
         } else {
-            yPosition = -1 * iterator * 40;
+            yPosition = -1 * iterator * 50;
         }
     } else {
         if (iterator === 0) {
             yPosition = 0;
         } else {
             if (iterator % 2 !== 0) {
-                yPosition = (iterator + 1) * 40;
+                yPosition = (iterator + 1) * 50;
             } else {
-                yPosition = -1 * iterator * 40;
+                yPosition = -1 * iterator * 50;
             }
         }
     }
@@ -136,185 +151,6 @@ for (i = 0; i < serverData.length; i++) {
     );
 }
 
-debugger;
-console.log('serverNodes', serverNodes);
-
-
-var nodes = [
-
-    //level containers declaration
-    {
-        data:
-            {
-                id: 'lvl0'
-            }
-    },
-    {
-        data:
-            {
-                id: 'lvl1'
-            }
-    },
-    {
-        data:
-            {
-                id: 'lvl2'
-
-            }
-    },
-    {
-        data:
-            {
-                id: 'lvl3'
-            }
-    },
-    {
-        data:
-            {
-                id: 'lvl4'
-            }
-    },
-
-    //nodes declaration
-
-    {
-        data:
-            {
-                id: 'lvl0_pos0',
-                parent: 'lvl0'
-            },
-        position: {
-            x: 0,
-            y: 0
-        }
-    },
-    {
-        data:
-            {
-                id: 'lvl1-pos0',
-                parent: 'lvl1'
-            },
-        position: {
-            x: 100,
-            y: 0
-        }
-    },
-    {
-        data:
-            {
-                id: 'lvl1-pos1',
-                parent: 'lvl1'
-            },
-        position: {
-            x: 100,
-            y: 0
-        }
-    },
-    {
-        data:
-            {
-                id: 'lvl1-pos2',
-                parent: 'lvl1'
-            },
-        position: {
-            x: 100,
-            y: 0
-        }
-    },
-    {
-        data:
-            {
-                id: 'lvl1-pos3',
-                parent: 'lvl1'
-            },
-        position: {
-            x: 100,
-            y: 0
-        }
-    },
-    {
-        data:
-            {
-                id: 'lvl1-pos4',
-                parent: 'lvl1'
-            },
-        position: {
-            x: 100,
-            y: 0
-        }
-    },
-    {
-        data:
-            {
-                id: 'lvl2_pos0',
-                parent: 'lvl2'
-            },
-        position: {
-            x: 200,
-            y: 0
-        }
-    },
-    {
-        data:
-            {
-                id: 'lvl3_pos0',
-                parent: 'lvl3'
-
-            },
-        position: {
-            x: 300,
-            y: 100
-        }
-    },
-    {
-        data:
-            {
-                id: 'lvl3_pos1',
-                parent: 'lvl3'
-
-            },
-        position: {
-            x: 300,
-            y: -200
-        }
-    },
-    {
-        data:
-            {
-                id: 'lvl4-pos0',
-                parent: 'lvl4'
-
-            },
-        position: {
-            x: 400,
-            y: 0
-        }
-    },
-    {
-        data:
-            {
-                id: 'lvl4-pos1',
-                parent: 'lvl4'
-
-            },
-        position: {
-            x: 400,
-            y: 0
-        }
-    }, {
-        data:
-            {
-                id: 'lvl4-pos2',
-                parent: 'lvl4'
-
-            },
-        position: {
-            x: 400,
-            y: 0
-        }
-    }
-
-];
 
 var cy = window.cy = cytoscape({
     container: document.getElementById('cy'),
@@ -363,41 +199,7 @@ var cy = window.cy = cytoscape({
 
     elements: {
         nodes: serverNodes,
-        edges: [
-            {
-                data:
-                    {
-                        id: 'lvl0-lvl1',
-                        source: 'lvl0',
-                        target: 'lvl1'
-                    }
-            },
-            {
-                data:
-                    {
-                        id: 'lvl1-lvl2',
-                        source: 'lvl1',
-                        target: 'lvl2'
-                    }
-            },
-            {
-                data:
-                    {
-                        id: 'lvl2-lvl3',
-                        source: 'lvl2',
-                        target: 'lvl3'
-                    }
-            },
-            {
-                data:
-                    {
-                        id: 'lvl3-lvl4',
-                        source: 'lvl3',
-                        target: 'lvl4'
-                    }
-            }
-
-        ]
+        edges: serverEdges
     },
 
     layout: {
