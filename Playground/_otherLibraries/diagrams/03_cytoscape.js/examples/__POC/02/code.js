@@ -1,7 +1,7 @@
 var serverData = [
     {
         level: 0,
-        label: "Mike_0"
+        label: "Marck_0"
     },
     {
         level: 1,
@@ -50,14 +50,133 @@ var serverData = [
 
 ];
 
+var serverNodes = [];
+var severNodesLevels = [];
+var nodesPerCategory = {};
+
+//counting levels
+for (var i = 0; i < serverData.length; i++) {
+    if (severNodesLevels.indexOf(serverData[i].level) === -1) {
+        severNodesLevels.push(serverData[i].level);
+    }
+}
+
+console.log("severNodesLevels", severNodesLevels);
+
+for (i = 0; i < severNodesLevels.length; i++) {
+
+    serverNodes.push(
+        {
+            data: {
+                id: "lvl" + severNodesLevels[i]
+            }
+        }
+    );
+
+    nodesPerCategory["lvl" + i] = 0;
+    for (var j = 0; j < serverData.length; j++) {
+        if (serverData[j].level === severNodesLevels[i]) {
+            nodesPerCategory["lvl" + i] += 1;
+        }
+    }
+}
+
+
+console.log('nodesPerCategory', nodesPerCategory);
+
+var iterator = 0;
+var currentLevel = "lvl0";
+
+function generateYPosition(level) {
+    if (level !== currentLevel) {
+        iterator = 0;
+    }
+
+    var numberOfNodes = nodesPerCategory["lvl" + level];
+    currentLevel = level;
+
+    var yPosition = 0;
+
+    if (numberOfNodes % 2 === 0) {
+        if (iterator % 2 === 0) {
+            yPosition = (iterator+1) * 40;
+        } else {
+            yPosition = -1 * iterator * 40;
+        }
+    } else {
+        if (iterator === 0) {
+            yPosition = 0;
+        } else {
+            if (iterator % 2 !== 0) {
+                yPosition = (iterator + 1) * 40;
+            } else {
+                yPosition = -1 * iterator * 40;
+            }
+        }
+    }
+
+    iterator++;
+
+    return yPosition;
+}
+
+
+for (i = 0; i < serverData.length; i++) {
+    serverNodes.push(
+        {
+            data: {
+                id: serverData[i].label,
+                parent: serverNodes[serverData[i].level]["data"]["id"] //gests the id of the coresponding level
+            },
+            position: {
+                x: serverData[i].level * 100,
+                y: generateYPosition(serverData[i].level)
+            }
+        }
+    );
+}
+
+debugger;
+console.log('serverNodes', serverNodes);
+
+
 var nodes = [
+
+    //level containers declaration
     {
         data:
             {
                 id: 'lvl0'
+            }
+    },
+    {
+        data:
+            {
+                id: 'lvl1'
+            }
+    },
+    {
+        data:
+            {
+                id: 'lvl2'
 
             }
     },
+    {
+        data:
+            {
+                id: 'lvl3'
+            }
+    },
+    {
+        data:
+            {
+                id: 'lvl4'
+            }
+    },
+
+    //nodes declaration
+
     {
         data:
             {
@@ -68,12 +187,6 @@ var nodes = [
             x: 0,
             y: 0
         }
-    },
-    {
-        data:
-            {
-                id: 'lvl1'
-            }
     },
     {
         data:
@@ -133,13 +246,6 @@ var nodes = [
     {
         data:
             {
-                id: 'lvl2'
-
-            }
-    },
-    {
-        data:
-            {
                 id: 'lvl2_pos0',
                 parent: 'lvl2'
             },
@@ -151,19 +257,13 @@ var nodes = [
     {
         data:
             {
-                id: 'lvl3'
-            }
-    },
-    {
-        data:
-            {
                 id: 'lvl3_pos0',
                 parent: 'lvl3'
 
             },
         position: {
             x: 300,
-            y: 0
+            y: 100
         }
     },
     {
@@ -175,14 +275,8 @@ var nodes = [
             },
         position: {
             x: 300,
-            y: 0
+            y: -200
         }
-    },
-    {
-        data:
-            {
-                id: 'lvl4'
-            }
     },
     {
         data:
@@ -268,7 +362,7 @@ var cy = window.cy = cytoscape({
 
 
     elements: {
-        nodes: nodes,
+        nodes: serverNodes,
         edges: [
             {
                 data:
