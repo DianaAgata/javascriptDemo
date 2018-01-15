@@ -50,6 +50,10 @@ var serverData = [
 
 ];
 
+var graphConfig  = {
+    xStep : 120,
+    yStep : 50
+};
 
 var serverNodes = [];
 var severNodesLevels = [];
@@ -114,18 +118,18 @@ function generateYPosition(level) {
 
     if (numberOfNodes % 2 === 0) {
         if (iterator % 2 === 0) {
-            yPosition = (iterator + 1) * 50;
+            yPosition = (iterator + 1) * graphConfig.yStep;
         } else {
-            yPosition = -1 * iterator * 50;
+            yPosition = -1 * iterator * graphConfig.yStep;
         }
     } else {
         if (iterator === 0) {
             yPosition = 0;
         } else {
             if (iterator % 2 !== 0) {
-                yPosition = (iterator + 1) * 50;
+                yPosition = (iterator + 1) * graphConfig.yStep;
             } else {
-                yPosition = -1 * iterator * 50;
+                yPosition = -1 * iterator * graphConfig.yStep;
             }
         }
     }
@@ -144,7 +148,7 @@ for (i = 0; i < serverData.length; i++) {
                 parent: serverNodes[serverData[i].level]["data"]["id"] //gests the id of the coresponding level
             },
             position: {
-                x: serverData[i].level * 100,
+                x: serverData[i].level * graphConfig.xStep,
                 y: generateYPosition(serverData[i].level)
             }
         }
