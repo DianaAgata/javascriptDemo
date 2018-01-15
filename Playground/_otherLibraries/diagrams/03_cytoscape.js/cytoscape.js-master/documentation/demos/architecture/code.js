@@ -20,14 +20,6 @@ var cy = cytoscape({
         'source-arrow-color': '#888',
         'target-arrow-shape': 'triangle'
       })
-    .selector(':selected')
-//       .css({
-//         'background-color': 'black',
-//         'line-color': 'black',
-//         'target-arrow-color': 'black',
-//         'source-arrow-color': 'black',
-//         'text-outline-color': 'black'
-//       })
     .selector('$node > node')
       .css({
         'shape': 'roundrectangle',
@@ -41,11 +33,6 @@ var cy = cytoscape({
         0,
         'font-size': 25
       })
-//     .selector('#core')
-//       .css({
-//         'background-color': '#000',
-//         'text-outline-color': '#000'
-//       })
     .selector('#core, #app')
       .css({
         'width': 120,
