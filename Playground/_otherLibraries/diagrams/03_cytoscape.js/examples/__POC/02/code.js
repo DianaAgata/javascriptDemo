@@ -3,62 +3,73 @@ var serverData = [
         step: 0,
         label: "Timothy Chizoba",
         status: "approved",
-        statusLabel: "Approved"
+        nodeLabel: "Approved"
     },
     {
         step: 1,
         "label": "Melik Kapua",
-        status: "rejected"
+        status: "rejected",
+        nodeLabel: "Rejected"
     },
     {
         step: 1,
         "label": "Yvain Uthyr",
-        status: "waiting"
+        status: "waiting",
+        nodeLabel: "Waiting"
     },
     {
         step: 1,
         "label": "Astaroth Ophelia",
-        status: "waiting"
+        status: "waiting",
+        nodeLabel: "Waiting"
     },
     {
         step: 1,
         "label": "Yahweh Cinderella",
-        status: "waiting"
+        status: "waiting",
+        nodeLabel: "Waiting"
     },
     {
         step: 1,
-        "label": "Éowyn Gyneth",
-        status: "waiting"
+        "label": "Eowyn Gyneth",
+        status: "waiting",
+        nodeLabel: "Waiting"
     },
     {
         step: 2,
         "label": "Ywain Athelstan",
-        status: "waiting"
+        status: "approved",
+        nodeLabel: "Approved"
     },
     {
         step: 3,
         "label": "Gandalf Ossian",
-        status: "waiting"
+        status: "waiting",
+        nodeLabel: "Waiting"
     },
     {
         step: 3,
         "label": "Nimue Gyneth",
-        status: "waiting"
+        status: "waiting",
+        nodeLabel: "Waiting"
     },
     {
         step: 4,
         "label": "Launce Artaxerxes",
-        status: "waiting"
+        status: "waiting",
+        nodeLabel: "Waiting"
     },
     {
         step: 4,
         "label": "Alphege Aminta",
-        status: "waiting"
+        status: "waiting",
+        nodeLabel: "Waiting"
     },
     {
         step: 4,
         "label": "Tristan Merry",
-        status: "waiting"
+        status: "waiting",
+        nodeLabel: "Waiting"
     }
 
 ];
@@ -273,6 +284,9 @@ var cy = window.cy = cytoscape({
 cy.minZoom(graphConfig.minZoom);
 cy.maxZoom(graphConfig.maxZoom);
 
+cy.userPanningEnabled( false ); //this allows you to move the graph only using the arrows
+
+
 
 var defaults = {
     zoomFactor: 0.05, // zoom factor per zoom tick
@@ -289,7 +303,7 @@ var defaults = {
     zoomOnly: false, // a minimal version of the ui only with zooming (useful on systems with bad mousewheel resolution)
     fitSelector: undefined, // selector of elements to fit
     animateOnFit: function () { // whether to animate on fit
-        return false;
+        return true;
     },
     fitAnimationDuration: 1000, // duration of animation on fit
 
@@ -301,6 +315,50 @@ var defaults = {
 };
 
 cy.panzoom(defaults);
+
+
+// addingQtips
+
+for (i = 0; i < serverData.length; i++) {
+    debugger;
+    cy.$('#node-' + i).qtip({
+        content: serverData[i].nodeLabel,
+        position: {
+            my: 'top center',
+            at: 'bottom center'
+        },
+        show: {
+            event: 'mouseover click',
+            ready: true
+        },
+        hide: {
+            event: 'mouseout unfocus'
+        },
+        style: {
+            classes: 'qtip-bootstrap',
+            tip: {
+                width: 16,
+                height: 8
+            }
+        }
+    });
+}
+
+
+// cy.on('mouseover', 'node', function (event) {
+//     var node = event.target
+//     debugger;
+//     node.qtip({
+//         content: 'hello',
+//         show: {
+//             event: event.type,
+//             ready: true
+//         },
+//         hide: {
+//             event: 'mouseout unfocus'
+//         }
+//     }, event);
+// });
 
 
 //center the graph on a node
