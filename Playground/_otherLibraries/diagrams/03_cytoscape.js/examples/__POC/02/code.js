@@ -64,7 +64,9 @@ var serverData = [
 
 var graphConfig = {
     xStep: 120,
-    yStep: 50
+    yStep: 50,
+    minZoom: 0.5,
+    maxZoom: 3
 };
 
 var serverNodes = [];
@@ -157,6 +159,7 @@ for (i = 0; i < serverData.length; i++) {
         {
             data: {
                 id: serverData[i].label,
+                label: "testLabel",
                 parent: serverNodes[serverData[i].step]["data"]["id"] //gests the id of the coresponding step
             },
             position: {
@@ -187,7 +190,7 @@ var cy = window.cy = cytoscape({
         {
             selector: 'node',
             css: {
-                'content': 'data(id)',
+                'content': 'data(label)',
                 'text-valign': 'center',
                 'text-halign': 'center'
             }
@@ -266,15 +269,15 @@ var cy = window.cy = cytoscape({
 }); //closing cy constructor
 
 
-cy.minZoom(0.5);
-cy.maxZoom(5);
+cy.minZoom(graphConfig.minZoom);
+cy.maxZoom(graphConfig.maxZoom);
 
 
 var defaults = {
     zoomFactor: 0.05, // zoom factor per zoom tick
     zoomDelay: 45, // how many ms between zoom ticks
-    minZoom: 0.5, // min zoom level
-    maxZoom: 5, // max zoom level
+    minZoom: graphConfig.minZoom, // min zoom level
+    maxZoom: graphConfig.maxZoom, // max zoom level
     fitPadding: 50, // padding when fitting
     panSpeed: 10, // how many ms in between pan ticks
     panDistance: 10, // max pan distance per tick
@@ -284,7 +287,7 @@ var defaults = {
     panIndicatorMinOpacity: 0.5, // min opacity of pan indicator (the draggable nib); scales from this to 1.0
     zoomOnly: false, // a minimal version of the ui only with zooming (useful on systems with bad mousewheel resolution)
     fitSelector: undefined, // selector of elements to fit
-    animateOnFit: function(){ // whether to animate on fit
+    animateOnFit: function () { // whether to animate on fit
         return false;
     },
     fitAnimationDuration: 1000, // duration of animation on fit
@@ -296,7 +299,7 @@ var defaults = {
     resetIcon: 'fa fa-expand'
 };
 
-cy.panzoom( defaults );
+cy.panzoom(defaults);
 
 
 //center the graph on a node
