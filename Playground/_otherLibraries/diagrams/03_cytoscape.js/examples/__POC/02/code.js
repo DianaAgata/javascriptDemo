@@ -1,75 +1,75 @@
 var serverData = [
     {
         step: 0,
-        label: "Timothy Chizoba",
+        user: "Timothy Chizoba",
         status: "approved",
-        nodeLabel: "Approved"
+        comment: "Approved"
     },
     {
         step: 1,
-        "label": "Melik Kapua",
+        "user": "Melik Kapua",
         status: "rejected",
-        nodeLabel: "Rejected"
+        comment: "Rejected"
     },
     {
         step: 1,
-        "label": "Yvain Uthyr",
+        "user": "Yvain Uthyr",
         status: "waiting",
-        nodeLabel: "Waiting"
+        comment: "Waiting"
     },
     {
         step: 1,
-        "label": "Astaroth Ophelia",
+        "user": "Astaroth Ophelia",
         status: "waiting",
-        nodeLabel: "Waiting"
+        comment: "Waiting"
     },
     {
         step: 1,
-        "label": "Yahweh Cinderella",
+        "user": "Yahweh Cinderella",
         status: "waiting",
-        nodeLabel: "Waiting"
+        comment: "Waiting"
     },
     {
         step: 1,
-        "label": "Eowyn Gyneth",
+        "user": "Eowyn Gyneth",
         status: "waiting",
-        nodeLabel: "Waiting"
+        comment: "Waiting"
     },
     {
         step: 2,
-        "label": "Ywain Athelstan",
+        "user": "Ywain Athelstan",
         status: "approved",
-        nodeLabel: "Approved"
+        comment: "Approved"
     },
     {
         step: 3,
-        "label": "Gandalf Ossian",
+        "user": "Gandalf Ossian",
         status: "waiting",
-        nodeLabel: "Waiting"
+        comment: "Waiting"
     },
     {
         step: 3,
-        "label": "Nimue Gyneth",
+        "user": "Nimue Gyneth",
         status: "waiting",
-        nodeLabel: "Waiting"
+        comment: "Waiting"
     },
     {
         step: 4,
-        "label": "Launce Artaxerxes",
+        "user": "Launce Artaxerxes",
         status: "waiting",
-        nodeLabel: "Waiting"
+        comment: "Waiting"
     },
     {
         step: 4,
-        "label": "Alphege Aminta",
+        "user": "Alphege Aminta",
         status: "waiting",
-        nodeLabel: "Waiting"
+        comment: "Waiting"
     },
     {
         step: 4,
-        "label": "Tristan Merry",
+        "user": "Tristan Merry",
         status: "waiting",
-        nodeLabel: "Waiting"
+        comment: "Waiting"
     }
 
 ];
@@ -171,7 +171,7 @@ for (i = 0; i < serverData.length; i++) {
         {
             data: {
                 id: "node" + "-" + i,
-                label: serverData[i].label,
+                user: serverData[i].user,
                 parent: serverNodes[serverData[i].step]["data"]["id"] //gests the id of the coresponding step
             },
             position: {
@@ -202,7 +202,7 @@ var cy = window.cy = cytoscape({
         {
             selector: 'node',
             css: {
-                'content': 'data(label)',
+                'content': 'data(user)',
                 'text-halign': 'center',
                 'text-valign': 'top'
             }
@@ -223,15 +223,6 @@ var cy = window.cy = cytoscape({
             selector: 'edge',
             css: {
                 'target-arrow-shape': 'triangle'
-            }
-        },
-        {
-            selector: ':selected',
-            css: {
-                'background-color': 'black',
-                'line-color': 'black',
-                'target-arrow-color': 'black',
-                'source-arrow-color': 'black'
             }
         },
         //style node statuses
@@ -322,7 +313,7 @@ cy.panzoom(defaults);
 for (i = 0; i < serverData.length; i++) {
     debugger;
     cy.$('#node-' + i).qtip({
-        content: serverData[i].nodeLabel,
+        content: serverData[i].comment,
         position: {
             my: 'top center',
             at: 'bottom center'
