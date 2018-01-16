@@ -1,69 +1,70 @@
 var serverData = [
     {
         step: 0,
-        label: "Marck_0",
-        status: "approved"
+        label: "Timothy Chizoba",
+        status: "approved",
+        statusLabel: "Approved"
     },
     {
         step: 1,
-        "label": "Joe_0",
+        "label": "Melik Kapua",
         status: "rejected"
     },
     {
         step: 1,
-        "label": "Joe_1",
+        "label": "Yvain Uthyr",
         status: "waiting"
     },
     {
         step: 1,
-        "label": "Joe_2",
+        "label": "Astaroth Ophelia",
         status: "waiting"
     },
     {
         step: 1,
-        "label": "Joe_3",
+        "label": "Yahweh Cinderella",
         status: "waiting"
     },
     {
         step: 1,
-        "label": "Joe_4",
+        "label": "Éowyn Gyneth",
         status: "waiting"
     },
     {
         step: 2,
-        "label": "Lucy_0",
+        "label": "Ywain Athelstan",
         status: "waiting"
     },
     {
         step: 3,
-        "label": "Mike_0",
+        "label": "Gandalf Ossian",
         status: "waiting"
     },
     {
         step: 3,
-        "label": "Mike_1",
+        "label": "Nimue Gyneth",
         status: "waiting"
     },
     {
         step: 4,
-        "label": "Julie_0",
+        "label": "Launce Artaxerxes",
         status: "waiting"
     },
     {
         step: 4,
-        "label": "Julie_1",
+        "label": "Alphege Aminta",
         status: "waiting"
     },
     {
         step: 4,
-        "label": "Julie_2",
+        "label": "Tristan Merry",
         status: "waiting"
     }
 
 ];
 
 var graphConfig = {
-    xStep: 120,
+    xStep: 200,
     yStep: 50,
     minZoom: 0.5,
     maxZoom: 3
@@ -158,8 +159,8 @@ for (i = 0; i < serverData.length; i++) {
     serverNodes.push(
         {
             data: {
-                id: serverData[i].label,
-                label: "testLabel",
+                id: "node" + "-" + i,
+                label: serverData[i].label,
                 parent: serverNodes[serverData[i].step]["data"]["id"] //gests the id of the coresponding step
             },
             position: {
@@ -191,8 +192,8 @@ var cy = window.cy = cytoscape({
             selector: 'node',
             css: {
                 'content': 'data(label)',
-                'text-valign': 'center',
-                'text-halign': 'center'
+                'text-halign': 'center',
+                'text-valign': 'top'
             }
         },
         {
