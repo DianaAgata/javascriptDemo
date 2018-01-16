@@ -75,7 +75,7 @@ var serverData = [
 ];
 
 var graphConfig = {
-    xStep: 200,
+    xStep: 250,
     yStep: 50,
     minZoom: 0.5,
     maxZoom: 3
@@ -123,7 +123,8 @@ for (i = 0; i < stepsArray.length - 1; i++) {
             id: stepsArray[i] + "-" + stepsArray[i + 1],
             source: stepsArray[i],
             target: stepsArray[i + 1]
-        }
+        },
+        classes: "test" ///TODO: finish this
     })
     ;
 }
@@ -204,7 +205,10 @@ var cy = window.cy = cytoscape({
             css: {
                 'content': 'data(user)',
                 'text-halign': 'center',
-                'text-valign': 'top'
+                'text-valign': 'top',
+                'color': '#222',
+                'font-family': 'arial',
+                'font-size': '20px'
             }
         },
         {
@@ -216,7 +220,9 @@ var cy = window.cy = cytoscape({
                 'padding-right': '10px',
                 'text-valign': 'top',
                 'text-halign': 'center',
-                'background-color': '#bbb'
+                'background-color': 'white',
+                'border-color': 'gray',
+                'border-width': "1px"
             }
         },
         {
@@ -226,6 +232,13 @@ var cy = window.cy = cytoscape({
             }
         },
         //style node statuses
+        {
+            selector: '.node',
+            css: {
+                'border-color': "gray",
+                'border-width': "1px"
+            }
+        },
         {
             selector: '.node.approved',
             css: {
@@ -239,8 +252,6 @@ var cy = window.cy = cytoscape({
             selector: '.node.rejected',
             css: {
                 'background-color': 'red',
-                'border-color': "blue",
-                'border-width': "2px",
                 'line-color': 'black',
                 'target-arrow-color': 'black',
                 'source-arrow-color': 'black'
@@ -253,6 +264,12 @@ var cy = window.cy = cytoscape({
                 'line-color': 'black',
                 'target-arrow-color': 'black',
                 'source-arrow-color': 'black'
+            }
+        },
+        {
+            selector: '.test', //TODO: finish this
+            css: {
+                'background-color': 'red'
             }
         }
 
@@ -275,8 +292,7 @@ var cy = window.cy = cytoscape({
 cy.minZoom(graphConfig.minZoom);
 cy.maxZoom(graphConfig.maxZoom);
 
-cy.userPanningEnabled( false ); //this allows you to move the graph only using the arrows
-
+// cy.userPanningEnabled(false); //this allows you to move the graph only using the arrows
 
 
 var defaults = {
