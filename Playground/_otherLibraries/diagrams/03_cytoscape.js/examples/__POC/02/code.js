@@ -1,70 +1,82 @@
 var serverData = [
     {
-        level: 0,
-        label: "Marck_0"
+        step: 0,
+        label: "Marck_0",
+        status: "approved"
     },
     {
-        level: 1,
-        "label": "Joe_0"
+        step: 1,
+        "label": "Joe_0",
+        status: "rejected"
     },
     {
-        level: 1,
-        "label": "Joe_1"
+        step: 1,
+        "label": "Joe_1",
+        status: "waiting"
     },
     {
-        level: 1,
-        "label": "Joe_2"
+        step: 1,
+        "label": "Joe_2",
+        status: "waiting"
     },
     {
-        level: 1,
-        "label": "Joe_3"
+        step: 1,
+        "label": "Joe_3",
+        status: "waiting"
     },
     {
-        level: 1,
-        "label": "Joe_4"
+        step: 1,
+        "label": "Joe_4",
+        status: "waiting"
     },
     {
-        level: 2,
-        "label": "Lucy_0"
+        step: 2,
+        "label": "Lucy_0",
+        status: "waiting"
     },
     {
-        level: 3,
-        "label": "Mike_0"
+        step: 3,
+        "label": "Mike_0",
+        status: "waiting"
     },
     {
-        level: 3,
-        "label": "Mike_1"
+        step: 3,
+        "label": "Mike_1",
+        status: "waiting"
     },
     {
-        level: 4,
-        "label": "Julie_0"
+        step: 4,
+        "label": "Julie_0",
+        status: "waiting"
     },
     {
-        level: 4,
-        "label": "Julie_1"
+        step: 4,
+        "label": "Julie_1",
+        status: "waiting"
     },
     {
-        level: 4,
-        "label": "Julie_2"
+        step: 4,
+        "label": "Julie_2",
+        status: "waiting"
     }
 
 ];
 
-var graphConfig  = {
-    xStep : 120,
-    yStep : 50
+var graphConfig = {
+    xStep: 120,
+    yStep: 50
 };
 
 var serverNodes = [];
 var severNodesLevels = [];
 var nodesPerCategory = {};
-var levelsArray = [];
+var stepsArray = [];
 
-//counting levels
+//counting steps
 for (var i = 0; i < serverData.length; i++) {
-    if (severNodesLevels.indexOf(serverData[i].level) === -1) {
-        severNodesLevels.push(serverData[i].level);
-        levelsArray.push('lvl' + serverData[i].level);
+    if (severNodesLevels.indexOf(serverData[i].step) === -1) {
+        severNodesLevels.push(serverData[i].step);
+        stepsArray.push('lvl' + serverData[i].step);
     }
 }
 
@@ -83,7 +95,7 @@ for (i = 0; i < severNodesLevels.length; i++) {
     nodesPerCategory["lvl" + i] = 0;
 
     for (var j = 0; j < serverData.length; j++) {
-        if (serverData[j].level === severNodesLevels[i]) {
+        if (serverData[j].step === severNodesLevels[i]) {
             nodesPerCategory["lvl" + i] += 1;
         }
     }
@@ -91,12 +103,12 @@ for (i = 0; i < severNodesLevels.length; i++) {
 
 var serverEdges = [];
 
-for (i = 0; i < levelsArray.length - 1; i++) {
+for (i = 0; i < stepsArray.length - 1; i++) {
     serverEdges.push({
         data: {
-            id: levelsArray[i] + "-" + levelsArray[i + 1],
-            source: levelsArray[i],
-            target: levelsArray[i + 1]
+            id: stepsArray[i] + "-" + stepsArray[i + 1],
+            source: stepsArray[i],
+            target: stepsArray[i + 1]
         }
     })
     ;
@@ -106,13 +118,13 @@ for (i = 0; i < levelsArray.length - 1; i++) {
 var iterator = 0;
 var currentLevel = "lvl0";
 
-function generateYPosition(level) {
-    if (level !== currentLevel) {
+function generateYPosition(step) {
+    if (step !== currentLevel) {
         iterator = 0;
     }
 
-    var numberOfNodes = nodesPerCategory["lvl" + level];
-    currentLevel = level;
+    var numberOfNodes = nodesPerCategory["lvl" + step];
+    currentLevel = step;
 
     var yPosition = 0;
 
@@ -145,12 +157,21 @@ for (i = 0; i < serverData.length; i++) {
         {
             data: {
                 id: serverData[i].label,
-                parent: serverNodes[serverData[i].level]["data"]["id"] //gests the id of the coresponding level
+                parent: serverNodes[serverData[i].step]["data"]["id"] //gests the id of the coresponding step
             },
             position: {
-                x: serverData[i].level * graphConfig.xStep,
-                y: generateYPosition(serverData[i].level)
-            }
+                x: serverData[i].step * graphConfig.xStep,
+                y: generateYPosition(serverData[i].step)
+            },
+            selected: false, // whether the element is selected (default false)
+
+            selectable: false, // whether the selection state is mutable (default true)
+
+            locked: true, // when locked a node's position is immutable (default false)
+
+            grabbable: false, // whether the node can be grabbed and moved by the user
+
+            classes: "node " + serverData[i].status
         }
     );
 }
@@ -197,7 +218,36 @@ var cy = window.cy = cytoscape({
                 'target-arrow-color': 'black',
                 'source-arrow-color': 'black'
             }
+        },
+        //style node statuses
+        {
+            selector: '.node.approved',
+            css: {
+                'background-color': 'blue',
+                'line-color': 'black',
+                'target-arrow-color': 'black',
+                'source-arrow-color': 'black'
+            }
+        },
+        {
+            selector: '.node.rejected',
+            css: {
+                'background-color': 'red',
+                'line-color': 'black',
+                'target-arrow-color': 'black',
+                'source-arrow-color': 'black'
+            }
+        },
+        {
+            selector: '.node.waiting',
+            css: {
+                'background-color': 'yellow',
+                'line-color': 'black',
+                'target-arrow-color': 'black',
+                'source-arrow-color': 'black'
+            }
         }
+
     ],
 
 
@@ -210,4 +260,13 @@ var cy = window.cy = cytoscape({
         name: 'preset',
         padding: 5
     }
-});
+
+}); //closing cy constructor
+
+
+cy.minZoom(0.5);
+cy.maxZoom(2);
+
+//center the graph on a node
+// var j = cy.$("#j");
+// cy.center( j );
