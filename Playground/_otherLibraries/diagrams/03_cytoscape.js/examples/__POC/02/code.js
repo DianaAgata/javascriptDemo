@@ -74,6 +74,13 @@ var serverData = [
 
 ];
 
+var i;
+
+//this is necessary because from the server side steps start at 1
+for(i=0; i<serverData.length; i++){
+    serverData[i].step -= 0;
+}
+
 var graphConfig = {
     xStep: 250,
     yStep: 50,
@@ -87,7 +94,7 @@ var nodesPerCategory = {};
 var stepsArray = [];
 
 //counting steps
-for (var i = 0; i < serverData.length; i++) {
+for (i = 0; i < serverData.length; i++) {
     if (severNodesLevels.indexOf(serverData[i].step) === -1) {
         severNodesLevels.push(serverData[i].step);
         stepsArray.push('lvl' + serverData[i].step);
