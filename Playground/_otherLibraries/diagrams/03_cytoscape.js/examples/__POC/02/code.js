@@ -1,72 +1,72 @@
 var serverData = [
     {
-        step: 0,
+        step: 1,
         user: "Timothy Chizoba",
         status: "approved",
         comment: "Approved"
     },
     {
-        step: 1,
+        step: 2,
         "user": "Melik Kapua",
         status: "rejected",
         comment: "Rejected"
     },
     {
-        step: 1,
+        step: 2,
         "user": "Yvain Uthyr",
         status: "waiting",
         comment: "Waiting"
     },
     {
-        step: 1,
+        step: 2,
         "user": "Astaroth Ophelia",
         status: "waiting",
         comment: "Waiting"
     },
     {
-        step: 1,
+        step: 2,
         "user": "Yahweh Cinderella",
         status: "waiting",
         comment: "Waiting"
     },
     {
-        step: 1,
+        step: 2,
         "user": "Eowyn Gyneth",
         status: "waiting",
         comment: "Waiting"
     },
     {
-        step: 2,
+        step: 3,
         "user": "Ywain Athelstan",
         status: "approved",
         comment: "Approved"
     },
     {
-        step: 3,
+        step: 4,
         "user": "Gandalf Ossian",
         status: "waiting",
         comment: "Waiting"
     },
     {
-        step: 3,
+        step: 4,
         "user": "Nimue Gyneth",
         status: "waiting",
         comment: "Waiting"
     },
     {
-        step: 4,
+        step: 5,
         "user": "Launce Artaxerxes",
         status: "waiting",
         comment: "Waiting"
     },
     {
-        step: 4,
+        step: 5,
         "user": "Alphege Aminta",
         status: "waiting",
         comment: "Waiting"
     },
     {
-        step: 4,
+        step: 5,
         "user": "Tristan Merry",
         status: "waiting",
         comment: "Waiting"
@@ -78,7 +78,7 @@ var i;
 
 //this is necessary because from the server side steps start at 1
 for(i=0; i<serverData.length; i++){
-    serverData[i].step -= 0;
+    serverData[i].step -= 1;
 }
 
 var graphConfig = {
