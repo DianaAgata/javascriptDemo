@@ -5,72 +5,72 @@ var serverData = [
         status: "approved",
         comment: "Approved"
     },
-    // {
-    //     step: 2,
-    //     "user": "Melik Kapua",
-    //     status: "rejected",
-    //     comment: "Rejected"
-    // },
-    // {
-    //     step: 2,
-    //     "user": "Yvain Uthyr",
-    //     status: "waiting",
-    //     comment: "Waiting"
-    // },
-    // {
-    //     step: 2,
-    //     "user": "Astaroth Ophelia",
-    //     status: "waiting",
-    //     comment: "Waiting"
-    // },
-    // {
-    //     step: 2,
-    //     "user": "Yahweh Cinderella",
-    //     status: "waiting",
-    //     comment: "Waiting"
-    // },
-    // {
-    //     step: 2,
-    //     "user": "Eowyn Gyneth",
-    //     status: "waiting",
-    //     comment: "Waiting"
-    // },
-    // {
-    //     step: 3,
-    //     "user": "Ywain Athelstan",
-    //     status: "approved",
-    //     comment: "Approved"
-    // },
-    // {
-    //     step: 4,
-    //     "user": "Gandalf Ossian",
-    //     status: "waiting",
-    //     comment: "Waiting"
-    // },
-    // {
-    //     step: 4,
-    //     "user": "Nimue Gyneth",
-    //     status: "waiting",
-    //     comment: "Waiting"
-    // },
-    // {
-    //     step: 5,
-    //     "user": "Launce Artaxerxes",
-    //     status: "waiting",
-    //     comment: "Waiting"
-    // },
-    // {
-    //     step: 5,
-    //     "user": "Alphege Aminta",
-    //     status: "waiting",
-    //     comment: "Waiting"
-    // },
-    // {
-    //     step: 5,
-    //     "user": "Tristan Merry",
-    //     status: "waiting",
-    //     comment: "Waiting"
-    // }
+    {
+        step: 2,
+        "user": "Melik Kapua",
+        status: "rejected",
+        comment: "Rejected"
+    },
+    {
+        step: 2,
+        "user": "Yvain Uthyr",
+        status: "waiting",
+        comment: "Waiting"
+    },
+    {
+        step: 2,
+        "user": "Astaroth Ophelia",
+        status: "waiting",
+        comment: "Waiting"
+    },
+    {
+        step: 2,
+        "user": "Yahweh Cinderella",
+        status: "waiting",
+        comment: "Waiting"
+    },
+    {
+        step: 2,
+        "user": "Eowyn Gyneth",
+        status: "waiting",
+        comment: "Waiting"
+    },
+    {
+        step: 3,
+        "user": "Ywain Athelstan",
+        status: "approved",
+        comment: "Approved"
+    },
+    {
+        step: 4,
+        "user": "Gandalf Ossian",
+        status: "waiting",
+        comment: "Waiting"
+    },
+    {
+        step: 4,
+        "user": "Nimue Gyneth",
+        status: "waiting",
+        comment: "Waiting"
+    },
+    {
+        step: 5,
+        "user": "Launce Artaxerxes",
+        status: "waiting",
+        comment: "Waiting"
+    },
+    {
+        step: 5,
+        "user": "Alphege Aminta",
+        status: "waiting",
+        comment: "Waiting"
+    },
+    {
+        step: 5,
+        "user": "Tristan Merry",
+        status: "waiting",
+        comment: "Waiting"
+    }
 
 ];
 
@@ -337,7 +337,6 @@ cy.panzoom(defaults);
 // addingQtips
 
 for (i = 0; i < serverData.length; i++) {
-    debugger;
     cy.$('#node-' + i).qtip({
         content: serverData[i].comment,
         position: {
