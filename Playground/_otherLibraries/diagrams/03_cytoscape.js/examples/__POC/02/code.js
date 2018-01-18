@@ -5,72 +5,72 @@ var serverData = [
         status: "approved",
         comment: "Approved"
     },
-    {
-        step: 2,
-        "user": "Melik Kapua",
-        status: "rejected",
-        comment: "Rejected"
-    },
-    {
-        step: 2,
-        "user": "Yvain Uthyr",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 2,
-        "user": "Astaroth Ophelia",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 2,
-        "user": "Yahweh Cinderella",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 2,
-        "user": "Eowyn Gyneth",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 3,
-        "user": "Ywain Athelstan",
-        status: "approved",
-        comment: "Approved"
-    },
-    {
-        step: 4,
-        "user": "Gandalf Ossian",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 4,
-        "user": "Nimue Gyneth",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 5,
-        "user": "Launce Artaxerxes",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 5,
-        "user": "Alphege Aminta",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 5,
-        "user": "Tristan Merry",
-        status: "waiting",
-        comment: "Waiting"
-    }
+    // {
+    //     step: 2,
+    //     "user": "Melik Kapua",
+    //     status: "rejected",
+    //     comment: "Rejected"
+    // },
+    // {
+    //     step: 2,
+    //     "user": "Yvain Uthyr",
+    //     status: "waiting",
+    //     comment: "Waiting"
+    // },
+    // {
+    //     step: 2,
+    //     "user": "Astaroth Ophelia",
+    //     status: "waiting",
+    //     comment: "Waiting"
+    // },
+    // {
+    //     step: 2,
+    //     "user": "Yahweh Cinderella",
+    //     status: "waiting",
+    //     comment: "Waiting"
+    // },
+    // {
+    //     step: 2,
+    //     "user": "Eowyn Gyneth",
+    //     status: "waiting",
+    //     comment: "Waiting"
+    // },
+    // {
+    //     step: 3,
+    //     "user": "Ywain Athelstan",
+    //     status: "approved",
+    //     comment: "Approved"
+    // },
+    // {
+    //     step: 4,
+    //     "user": "Gandalf Ossian",
+    //     status: "waiting",
+    //     comment: "Waiting"
+    // },
+    // {
+    //     step: 4,
+    //     "user": "Nimue Gyneth",
+    //     status: "waiting",
+    //     comment: "Waiting"
+    // },
+    // {
+    //     step: 5,
+    //     "user": "Launce Artaxerxes",
+    //     status: "waiting",
+    //     comment: "Waiting"
+    // },
+    // {
+    //     step: 5,
+    //     "user": "Alphege Aminta",
+    //     status: "waiting",
+    //     comment: "Waiting"
+    // },
+    // {
+    //     step: 5,
+    //     "user": "Tristan Merry",
+    //     status: "waiting",
+    //     comment: "Waiting"
+    // }
 
 ];
 
@@ -124,16 +124,19 @@ for (i = 0; i < severNodesLevels.length; i++) {
 
 var serverEdges = [];
 
-for (i = 0; i < stepsArray.length - 1; i++) {
-    serverEdges.push({
-        data: {
-            id: stepsArray[i] + "-" + stepsArray[i + 1],
-            source: stepsArray[i],
-            target: stepsArray[i + 1]
-        },
-        classes: "test" ///TODO: finish this
-    })
-    ;
+if(serverData.length > 1){
+    debugger;
+    for (i = 0; i < stepsArray.length - 1; i++) {
+        serverEdges.push({
+            data: {
+                id: stepsArray[i] + "-" + stepsArray[i + 1],
+                source: stepsArray[i],
+                target: stepsArray[i + 1]
+            },
+            classes: "test" ///TODO: finish this
+        })
+        ;
+    }
 }
 
 
@@ -180,7 +183,7 @@ for (i = 0; i < serverData.length; i++) {
             data: {
                 id: "node" + "-" + i,
                 user: serverData[i].user,
-                parent: serverNodes[serverData[i].step]["data"]["id"] //gests the id of the coresponding step
+                parent: (serverData.length>1) ?  serverNodes[serverData[i].step]["data"]["id"] : null //gests the id of the corresponding step if there is more than one node
             },
             position: {
                 x: serverData[i].step * graphConfig.xStep,
