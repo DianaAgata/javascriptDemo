@@ -1,103 +1,138 @@
 var serverData = [
     {
         step: 1,
-        user: "Timothy Chizoba",
-        status: "approved",
-        comment: "Approved"
+        approvers: [
+            {
+                user: "Timothy Chizoba",
+                status: "approved",
+                comment: "Approved"
+            }
+        ]
     },
     {
         step: 2,
-        "user": "Melik Kapua",
-        status: "rejected",
-        comment: "Rejected"
-    },
-    {
-        step: 2,
-        "user": "Yvain Uthyr",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 2,
-        "user": "Astaroth Ophelia",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 2,
-        "user": "Yahweh Cinderella",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 2,
-        "user": "Eowyn Gyneth",
-        status: "waiting",
-        comment: "Waiting"
+        approvers: [
+            {
+                "user": "Melik Kapua",
+                status: "rejected",
+                comment: "Rejected"
+            },
+            {
+                "user": "Yvain Uthyr",
+                status: "waiting",
+                comment: "Waiting"
+            },
+            {
+                "user": "Astaroth Ophelia",
+                status: "waiting",
+                comment: "Waiting"
+            },
+            {
+                "user": "Yahweh Cinderella",
+                status: "waiting",
+                comment: "Waiting"
+            },
+            {
+                "user": "Eowyn Gyneth",
+                status: "waiting",
+                comment: "Waiting"
+            }
+        ]
     },
     {
         step: 3,
-        "user": "Ywain Athelstan",
-        status: "approved",
-        comment: "Approved"
+        approvers: [
+            {
+                "user": "Ywain Athelstan",
+                status: "approved",
+                comment: "Approved"
+            }
+        ]
     },
     {
         step: 4,
-        "user": "Gandalf Ossian",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 4,
-        "user": "Nimue Gyneth",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 5,
-        "user": "Launce Artaxerxes",
-        status: "waiting",
-        comment: "Waiting"
+        approvers: [
+            {
+                "user": "Gandalf Ossian",
+                status: "waiting",
+                comment: "Waiting"
+            },
+            {
+                "user": "Nimue Gyneth",
+                status: "waiting",
+                comment: "Waiting"
+            }
+        ]
     },
     {
         step: 5,
-        "user": "Alphege Aminta",
-        status: "waiting",
-        comment: "Waiting"
-    },
-    {
-        step: 5,
-        "user": "Tristan Merry",
-        status: "waiting",
-        comment: "Waiting"
+        approvers: [
+            {
+                "user": "Launce Artaxerxes",
+                status: "waiting",
+                comment: "Waiting"
+            },
+            {
+                "user": "Alphege Aminta",
+                status: "waiting",
+                comment: "Waiting"
+            },
+            {
+                "user": "Tristan Merry",
+                status: "waiting",
+                comment: "Waiting"
+            }
+        ]
     }
 
 ];
 
-var i;
-
-//this is necessary because from the server side steps start at 1
-for(i=0; i<serverData.length; i++){
-    serverData[i].step -= 1;
-}
 
 var graphConfig = {
     xStep: 250,
     yStep: 50,
     minZoom: 0.5,
-    maxZoom: 3
+    maxZoom: 3,
+    maxGraphWidth: 800,
+    maxGraphHeight: 600
 };
+
+
+var i, j;
+
+
+function prepareData(data) {
+    var stepLevel = 0;
+    var newServerData = [];
+    for (i = 0; i < data.length; i++) {
+        // data[i]stepLevel = stepLevel;
+        for (var j = 0; j < data[i].approvers.length; j++) {
+            newServerData.push({
+                stepLevel: stepLevel,
+                user: data[i].approvers[j].user,
+                status: data[i].approvers[j].status,
+                comment: data[i].approvers[j].status
+            });
+        }
+        stepLevel++;
+    }
+
+    return newServerData;
+}
+
+var newServerData = prepareData(serverData);
 
 var serverNodes = [];
 var severNodesLevels = [];
 var nodesPerCategory = {};
 var stepsArray = [];
+var maxNodesPerLevel = 0;
 
 //counting steps
-for (i = 0; i < serverData.length; i++) {
-    if (severNodesLevels.indexOf(serverData[i].step) === -1) {
-        severNodesLevels.push(serverData[i].step);
-        stepsArray.push('lvl' + serverData[i].step);
+for (i = 0; i < newServerData.length; i++) {
+    if (severNodesLevels.indexOf(newServerData[i].stepLevel) === -1) {
+        severNodesLevels.push(newServerData[i].stepLevel);
+        stepsArray.push('lvl' + newServerData[i].stepLevel);
     }
 }
 
@@ -115,8 +150,8 @@ for (i = 0; i < severNodesLevels.length; i++) {
 
     nodesPerCategory["lvl" + i] = 0;
 
-    for (var j = 0; j < serverData.length; j++) {
-        if (serverData[j].step === severNodesLevels[i]) {
+    for (j = 0; j < newServerData.length; j++) {
+        if (newServerData[j].stepLevel === severNodesLevels[i]) {
             nodesPerCategory["lvl" + i] += 1;
         }
     }
@@ -124,7 +159,7 @@ for (i = 0; i < severNodesLevels.length; i++) {
 
 var serverEdges = [];
 
-if(serverData.length > 1){
+if (newServerData.length > 1) {
     debugger;
     for (i = 0; i < stepsArray.length - 1; i++) {
         serverEdges.push({
@@ -173,21 +208,26 @@ function generateYPosition(step) {
 
     iterator++;
 
+    if (iterator > maxNodesPerLevel) {
+        debugger;
+        maxNodesPerLevel = iterator;
+    }
+
     return yPosition;
 }
 
 
-for (i = 0; i < serverData.length; i++) {
+for (i = 0; i < newServerData.length; i++) {
     serverNodes.push(
         {
             data: {
                 id: "node" + "-" + i,
-                user: serverData[i].user,
-                parent: (serverData.length>1) ?  serverNodes[serverData[i].step]["data"]["id"] : null //gests the id of the corresponding step if there is more than one node
+                user: newServerData[i].user,
+                parent: (newServerData.length > 1) ? serverNodes[newServerData[i].stepLevel]["data"]["id"] : null //gests the id of the corresponding step if there is more than one node
             },
             position: {
-                x: serverData[i].step * graphConfig.xStep,
-                y: generateYPosition(serverData[i].step)
+                x: newServerData[i].stepLevel * graphConfig.xStep,
+                y: generateYPosition(newServerData[i].stepLevel)
             },
             selected: false, // whether the element is selected (default false)
 
@@ -197,11 +237,14 @@ for (i = 0; i < serverData.length; i++) {
 
             grabbable: false, // whether the node can be grabbed and moved by the user
 
-            classes: "node " + serverData[i].status
+            classes: "node " + newServerData[i].status
         }
     );
 }
 
+
+$('#cyContainer').width(Math.min((severNodesLevels.length * 200), graphConfig.maxGraphWidth));
+$('#cyContainer').height(Math.min((maxNodesPerLevel + 1) * 100, graphConfig.maxGraphHeight));
 
 var cy = window.cy = cytoscape({
     container: document.getElementById('cy'),
@@ -302,7 +345,9 @@ var cy = window.cy = cytoscape({
 cy.minZoom(graphConfig.minZoom);
 cy.maxZoom(graphConfig.maxZoom);
 
-// cy.userPanningEnabled(false); //this allows you to move the graph only using the arrows
+// cy.zoom({
+//     level: 0.8 // the zoom level
+// });
 
 
 var defaults = {
@@ -336,9 +381,9 @@ cy.panzoom(defaults);
 
 // addingQtips
 
-for (i = 0; i < serverData.length; i++) {
+for (i = 0; i < newServerData.length; i++) {
     cy.$('#node-' + i).qtip({
-        content: serverData[i].comment,
+        content: newServerData[i].comment,
         position: {
             my: 'top center',
             at: 'bottom center'
