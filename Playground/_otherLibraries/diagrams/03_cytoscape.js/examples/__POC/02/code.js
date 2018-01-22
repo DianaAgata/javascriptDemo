@@ -4,8 +4,8 @@ var serverData = [
         invoiceApprovalDetailsList: [
             {
                 userFullName: "Timothy Chizoba",
-                status: "approved",
-                comment: "Approved"
+                status: "statusApproved",
+                comment: "this is just a status"
             }
         ]
     },
@@ -14,28 +14,28 @@ var serverData = [
         invoiceApprovalDetailsList: [
             {
                 "userFullName": "Melik Kapua",
-                status: "rejected",
-                comment: "Rejected"
+                status: "statusRejected",
+                comment: "this is a comment"
             },
             {
                 "userFullName": "Yvain Uthyr",
-                status: "waiting",
-                comment: "Waiting"
+                status: "statusApprovalRequested",
+                comment: "lolos envios"
             },
             {
                 "userFullName": "Astaroth Ophelia",
-                status: "waiting",
-                comment: "Waiting"
+                status: "statusApprovalRequested",
+                comment: "Bibi Bubu"
             },
             {
                 "userFullName": "Yahweh Cinderella",
-                status: "waiting",
-                comment: "Waiting"
+                status: "statusApprovalRequested",
+                comment: "Gigi Gica"
             },
             {
                 "userFullName": "Eowyn Gyneth",
-                status: "waiting",
-                comment: "Waiting"
+                status: "statusApprovalRequested",
+                comment: "lorem ipsum"
             }
         ]
     },
@@ -44,8 +44,8 @@ var serverData = [
         invoiceApprovalDetailsList: [
             {
                 "userFullName": "Ywain Athelstan",
-                status: "approved",
-                comment: "Approved"
+                status: "statusApprovalNotReady",
+                comment: "bla bla bla"
             }
         ]
     },
@@ -228,6 +228,7 @@ function assignNodesPostionAndParent() {
                     type: "node",
                     userFullName: newServerData[i].userFullName,
                     comment: newServerData[i].comment,
+                    status: newServerData[i].status,
                     parent: (newServerData.length > 1) ? serverNodes[newServerData[i].stepLevel]["data"]["id"] : null //gests the id of the corresponding step if there is more than one node
                 },
                 position: {
@@ -246,6 +247,8 @@ function assignNodesPostionAndParent() {
             }
         );
     }
+
+    // console.log(newServerData);
 }
 
 assignNodesPostionAndParent();
@@ -253,6 +256,7 @@ assignNodesPostionAndParent();
 var cy;
 
 function initCy() {
+
     $('#cyContainer').width(Math.min((severNodesLevels.length * 200), graphConfig.maxGraphWidth) + 50);
     $('#cyContainer').height(Math.min((maxNodesPerLevel + 1) * 100, graphConfig.maxGraphHeight) + 50);
 
@@ -268,6 +272,7 @@ function initCy() {
                 selector: 'node',
                 css: {
                     'content': 'data(userFullName)',
+                    "text-margin-y" : 10,
                     'text-halign': 'center',
                     'text-valign': 'bottom',
                     'color': '#222',
@@ -286,7 +291,7 @@ function initCy() {
                     'text-halign': 'center',
                     'background-color': 'white',
                     'border-color': 'gray',
-                    'border-width': "1px"
+                    'border-width': "2px"
                 }
             },
             {
@@ -298,43 +303,61 @@ function initCy() {
             //style node statuses
             {
                 selector: '.node',
-                css: {
+                css: { //TODO:add padding for labels
                     'border-color': "gray",
                     'border-width': "1px"
-                }
-            },
-            {
-                selector: '.node.approved',
-                css: {
-                    'background-color': 'blue',
-                    'line-color': 'black',
-                    'target-arrow-color': 'black',
-                    'source-arrow-color': 'black'
-                }
-            },
-            {
-                selector: '.node.rejected',
-                css: {
-                    'background-color': 'red',
-                    'line-color': 'black',
-                    'target-arrow-color': 'black',
-                    'source-arrow-color': 'black'
-                }
-            },
-            {
-                selector: '.node.waiting',
-                css: {
-                    'background-color': 'yellow',
-                    'line-color': 'black',
-                    'target-arrow-color': 'black',
-                    'source-arrow-color': 'black'
-                }
-            },
-            {
-                selector: '.cy-node', //TODO: finish this
-                css: {
 
                 }
+            },
+            {
+                selector: '.node.statusApproved',
+                css: {
+                    'background-color': '#02BFB3',
+                    'line-color': 'black',
+                    'target-arrow-color': 'black',
+                    'source-arrow-color': 'black'
+                }
+            },
+            {
+                selector: '.node.statusRejected',
+                css: {
+                    'background-color': '#F44336',
+                    'line-color': 'black',
+                    'target-arrow-color': 'black',
+                    'source-arrow-color': 'black'
+                }
+            },
+            {
+                selector: '.node.statusApprovalRequested',
+                css: {
+                    'background-color': '#FFC107',
+                    'line-color': 'black',
+                    'target-arrow-color': 'black',
+                    'source-arrow-color': 'black'
+                }
+            },
+            {
+                selector: '.node.statusOnHold',
+                css: {
+                    'background-color': '#AAAAAA',
+                    'line-color': 'black',
+                    'target-arrow-color': 'black',
+                    'source-arrow-color': 'black'
+                }
+            },
+            {
+                selector: '.node.statusApprovalNotReady',
+                css: {
+                    'background-color': '#dedede',
+                    'line-color': 'black',
+                    'target-arrow-color': 'black',
+                    'source-arrow-color': 'black'
+                }
+            },
+
+            {
+                selector: '.cy-node', //TODO: finish this
+                css: {}
             }
         ],
 
@@ -409,10 +432,15 @@ function renderNodesTemplates() {
             [
                 {
                     tpl: function (data) {
-                        if (data.type === "node" && data.comment) {
-                            return "<span class='tooltipsterCy" + data.id + "' title=" + data.comment + "></span>";
+                        var comment = data.comment ? '<li>' + data.comment + '</li>' : "";
+                        var status = data.status ? '<li>' + $filter('translate')(data.status) + '</li>' : "";
+
+                        if (data.type === "node" && (comment || status)) {
+                            return '<span id="tooltipsterCy' + data.id + '" ' +
+                                '       title="<ul ' + 'class=\'tooltipsterCyLabelList\'' + '>' + comment + status + '</ul>" ' +
+                                '     </span>';
                         }
-                        return "<span title=" + data.id + "></span>";
+                        return '<span title=" + data.id + "></span>';
                     }
                 }
             ]
@@ -427,14 +455,13 @@ initTooltips();
 
 function initTooltips() {
     cy.on('mouseover', 'node', function () {
-        var tooltip = tooltipService.init($('.tooltipsterCy' + this.data("id")), {});//FIXME: change sthis service
+        var tooltip = tooltipService.init($('#tooltipsterCy' + this.data("id")), {contentAsHTML: true});
         tooltip.tooltipster('open');
 
     });
 
     cy.on('mouseout', 'node', function () {
-        console.log('mouse out');
-        $('.tooltipsterCy' + this.data("id")).tooltipster('close');
+        $('#tooltipsterCy' + this.data("id")).tooltipster('close');
 
     });
 }
